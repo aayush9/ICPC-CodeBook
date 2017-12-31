@@ -1,19 +1,6 @@
-/*
-Finds all occurrences of the pattern string p within the
-text string t. Running time is O(n + m), where n and m
-are the lengths of p and t, respecitvely.
-*/
-
-#include <iostream>
-#include <string>
-#include <vector>
-
-using namespace std;
-
 typedef vector<int> VI;
 
-void buildPi(string& p, VI& pi)
-{
+void buildPi(string& p, VI& pi){
   pi = VI(p.length());
   int k = -2;
   for(int i = 0; i < p.length(); i++) {
@@ -23,8 +10,7 @@ void buildPi(string& p, VI& pi)
   }
 }
 
-int KMP(string& t, string& p)
-{
+int KMP(string& t, string& p){
   VI pi;
   buildPi(p, pi);
   int k = -1;
@@ -42,9 +28,7 @@ int KMP(string& t, string& p)
   return 0;
 }
 
-int main()
-{
+int main(){
   string a = "AABAACAADAABAABA", b = "AABA";
   KMP(a, b); // expected matches at: 0, 9, 12
-  return 0;
 }

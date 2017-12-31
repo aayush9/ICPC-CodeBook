@@ -5,13 +5,6 @@ O(m*n) time except for finding all longest common subsequences, which
 may be slow depending on how many there are.
 */
 
-#include <iostream>
-#include <vector>
-#include <set>
-#include <algorithm>
-
-using namespace std;
-
 typedef int T;
 typedef vector<T> VT;
 typedef vector<VT> VVT;

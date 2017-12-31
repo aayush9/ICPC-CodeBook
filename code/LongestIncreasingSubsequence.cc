@@ -6,12 +6,6 @@
 //   INPUT: a vector of integers
 //   OUTPUT: a vector containing the longest increasing subsequence
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
-using namespace std;
-
 typedef vector<int> VI;
 typedef pair<int,int> PII;
 typedef vector<PII> VPII;
