@@ -1,13 +1,6 @@
-// Routines for performing computations on dates.  In these routines,
-// months are expressed as integers from 1 to 12, days are expressed
-// as integers from 1 to 31, and years are expressed as 4-digit
+// Months are expressed as integers from 1 to 12, Days are expressed
+// as integers from 1 to 31, and Years are expressed as 4-digit
 // integers.
-
-#include <iostream>
-#include <string>
-
-using namespace std;
-
 string dayOfWeek[] = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
 
 // converts Gregorian date to integer (Julian day number)
@@ -22,7 +15,6 @@ int dateToInt (int m, int d, int y){
 // converts integer (Julian day number) to Gregorian date: month/day/year
 void intToDate (int jd, int &m, int &d, int &y){
   int x, n, i, j;
-  
   x = jd + 68569;
   n = 4 * x / 146097;
   x -= (146097 * n + 3) / 4;
@@ -38,19 +30,4 @@ void intToDate (int jd, int &m, int &d, int &y){
 // converts integer (Julian day number) to day of week
 string intToDay (int jd){
   return dayOfWeek[jd % 7];
-}
-
-int main (int argc, char **argv){
-  int jd = dateToInt (3, 24, 2004);
-  int m, d, y;
-  intToDate (jd, m, d, y);
-  string day = intToDay (jd);
-  
-  // expected output:
-  //    2453089
-  //    3/24/2004
-  //    Wed
-  cout << jd << endl
-    << m << "/" << d << "/" << y << endl
-    << day << endl;
 }

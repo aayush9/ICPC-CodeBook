@@ -1,4 +1,3 @@
-// Reference: My (forked) ICPC codebook: https://github.com/aayush9/ICPC-CodeBook/blob/master/code/Dinic.cc
 struct Dinic {
   struct Edge {
     int u, v;
