@@ -4,15 +4,13 @@ using namespace std;
 
 const int N_MAX = 130010;
 const int oo = 0x3f3f3f3f;
-struct Node
-{
+struct Node{
   Node *ch[2], *pre;
   int val, size;
   bool isTurned;
 } nodePool[N_MAX], *null, *root;
 
-Node *allocNode(int val)
-{
+Node *allocNode(int val){
   static int freePos = 0;
   Node *x = &nodePool[freePos ++];
   x->val = val, x->isTurned = false;
@@ -21,31 +19,26 @@ Node *allocNode(int val)
   return x;
 }
 
-inline void update(Node *x)
-{
+inline void update(Node *x){
   x->size = x->ch[0]->size + x->ch[1]->size + 1;
 }
 
-inline void makeTurned(Node *x)
-{
+inline void makeTurned(Node *x){
   if(x == null)
     return;
   swap(x->ch[0], x->ch[1]);
   x->isTurned ^= 1;
 }
 
-inline void pushDown(Node *x)
-{
-  if(x->isTurned)
-  {
+inline void pushDown(Node *x){
+  if(x->isTurned){
     makeTurned(x->ch[0]);
     makeTurned(x->ch[1]);
     x->isTurned ^= 1;
   }
 }
 
-inline void rotate(Node *x, int c)
-{
+inline void rotate(Node *x, int c){
   Node *y = x->pre;
   x->pre = y->pre;
   if(y->pre != null)
@@ -59,24 +52,19 @@ inline void rotate(Node *x, int c)
     root = x;
 }
 
-void splay(Node *x, Node *p)
-{
-  while(x->pre != p)
-  {
+void splay(Node *x, Node *p){
+  while(x->pre != p){
     if(x->pre->pre == p)
       rotate(x, x == x->pre->ch[0]);
-    else
-    {
+    else{
       Node *y = x->pre, *z = y->pre;
-      if(y == z->ch[0])
-      {
+      if(y == z->ch[0]){
         if(x == y->ch[0])
           rotate(y, 1), rotate(x, 1);
         else
           rotate(x, 0), rotate(x, 1);
       }
-      else
-      {
+      else{
         if(x == y->ch[1])
           rotate(y, 0), rotate(x, 0);
         else
@@ -87,11 +75,9 @@ void splay(Node *x, Node *p)
   update(x);
 }
 
-void select(int k, Node *fa)
-{
+void select(int k, Node *fa){
   Node *now = root;
-  while(1)
-  {
+  while(1){
     pushDown(now);
     int tmp = now->ch[0]->size + 1;
     if(tmp == k)
@@ -104,8 +90,7 @@ void select(int k, Node *fa)
   splay(now, fa);
 }
 
-Node *makeTree(Node *p, int l, int r)
-{
+Node *makeTree(Node *p, int l, int r){
   if(l > r)
     return null;
   int mid = (l + r) / 2;
@@ -117,8 +102,7 @@ Node *makeTree(Node *p, int l, int r)
   return x;
 }
 
-int main()
-{
+int main(){
   int n, m;
   null = allocNode(0);
   null->size = 0;
@@ -131,8 +115,7 @@ int main()
   root->ch[1]->ch[0] = makeTree(root->ch[1], 1, n);
   splay(root->ch[1]->ch[0], null);
 
-  while(m --)
-  {
+  while(m --){
     int a, b;
     scanf("%d%d", &a, &b);
     a ++, b ++;
@@ -141,8 +124,7 @@ int main()
     makeTurned(root->ch[1]->ch[0]);
   }
 
-  for(int i = 1; i <= n; i ++)
-  {
+  for(int i = 1; i <= n; i ++){
     select(i + 1, null);
     printf("%d ", root->val);
   }

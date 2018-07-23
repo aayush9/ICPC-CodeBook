@@ -1,8 +1,5 @@
-// Given a list of numbers of length n, this routine extracts a
-// longest increasing subsequence.
-//
+// Given a list of numbers of length n, this routine extracts a longest increasing subsequence.
 // Running time: O(n log n)
-//
 //   INPUT: a vector of integers
 //   OUTPUT: a vector containing the longest increasing subsequence
 

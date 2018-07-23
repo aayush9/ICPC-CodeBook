@@ -29,8 +29,7 @@ struct TwoSat {
   }
 
   // returns true if satisfiable, false otherwise
-  // on completion, val[x] is the assigned value of variable x
-  // note, val[x] = 0 implies val[x^1] = 1
+  // on completion, val[x] is the assigned value of variable x (Note: val[x] = 0 implies val[x^1] = 1)
   bool two_sat() {
     scnt = 0;
     for (int i = 0; i < n; dfs1(i++));

@@ -1,9 +1,7 @@
-// Months are expressed as integers from 1 to 12, Days are expressed
-// as integers from 1 to 31, and Years are expressed as 4-digit
-// integers.
+// Months are expressed as integers from 1 to 12, Days are expressed as integers from 1 to 31, and Years are expressed as 4-digit integers.
 string dayOfWeek[] = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
 
-// converts Gregorian date to integer (Julian day number)
+//converts Gregorian date to integer(Julian day number)
 int dateToInt (int m, int d, int y){  
   return 
     1461 * (y + 4800 + (m - 14) / 12) / 4 +

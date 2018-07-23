@@ -9,7 +9,6 @@ void buildPi(string& p, VI& pi){
     pi[i] = ++k;
   }
 }
-
 int KMP(string& t, string& p){
   VI pi;
   buildPi(p, pi);
@@ -25,10 +24,8 @@ int KMP(string& t, string& p){
       k = (k == -1) ? -2 : pi[k];
     }
   }
-  return 0;
 }
 
 int main(){
-  string a = "AABAACAADAABAABA", b = "AABA";
-  KMP(a, b); // expected matches at: 0, 9, 12
+  KMP("AABAACAADAABAABA", "AABA"); //Mtches at: 0,9,12
 }
