@@ -1,0 +1,6 @@
+<snippet>
+	<description>Push Back</description>
+	<content><![CDATA[push_back(${1:var})]]></content>
+	<tabTrigger>pb</tabTrigger>
+	<scope>source.cpp, source.c++</scope>
+</snippet>

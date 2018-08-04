@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[int tour[200005],enter[100005],leave[100005],CLK=0;
+void gettour(int u=1, int dad=-1){
+	tour[CLK]=u;
+	enter[u]=CLK++;
+	for(int i:v[u])
+		if(i!=dad)
+			gettour(i,u);
+	tour[CLK]=u;
+	leave[u]=CLK++;
+}
+]]></content>
+	<tabTrigger>eulertour</tabTrigger>
+	<scope>source.cpp, source.c, source.c++</scope>
+</snippet>

@@ -1,0 +1,44 @@
+<snippet>
+	<content><![CDATA[int64_t extended_euclid(int64_t a,int64_t b,int64_t &x,int64_t &y) {
+	int64_t xx = y = 0;
+	int64_t yy = x = 1;
+	while (b) {
+		int64_t q = a / b;
+		int64_t t = b; b = a%b; a = t;
+		t = xx; xx = x - q*xx; x = t;
+		t = yy; yy = y - q*yy; y = t;
+	}
+	return a;
+}
+int64_t mod_inverse(int a, int n) {
+	int64_t x, y;
+	int64_t g = extended_euclid(a, n, x, y);
+	if(g > 1) return -1;
+	return (x+n)%n;
+}
+pair<int64_t,int64_t> chinese_remainder_theorem(int64_t m1,int64_t r1,int64_t m2,int64_t r2) {
+	int64_t s, t;
+	int64_t g = extended_euclid(m1, m2, s, t);
+	if(r1%g != r2%g) return make_pair(0, -1);
+	return make_pair((s*r2*m1+t*r1*m2+m1*m2)%(m1*m2)/g,m1*m2/g);
+}
+pair<int64_t,int64_t> chinese_remainder_theorem(vector<int64_t> &m,vector<int64_t> &r) {
+	pair<int64_t,int64_t> ret = make_pair(r[0], m[0]);
+	for (int i=1;i<m.size();++i){
+		ret = chinese_remainder_theorem(ret.second, ret.first, m[i], r[i]);
+		if(ret.second == -1) break;
+	}
+	return ret;
+}
+bool linear_diophantine(int64_t a,int64_t b,int64_t c,int64_t &x,int64_t &y) {
+	int val = extended_euclid(a,b,x,y);
+    if(c%val){x=-1;return -1;}
+    a/=val; b/=val; c/=val; x*=c; x%=b;
+    if(x<0) x+=b;
+    y = (c-a*x)/b;
+    return val;  
+}
+]]></content>
+	<tabTrigger>NT</tabTrigger>
+	<scope>source.cpp, source.c, source.c++</scope>
+</snippet>

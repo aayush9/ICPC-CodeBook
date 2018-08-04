@@ -1,0 +1,6 @@
+<snippet>
+	<description>Reset_Array</description>
+	<content><![CDATA[memset(${1:a},${2:val},sizeof(${1:a}))]]></content>
+	<tabTrigger>reset</tabTrigger>
+	<scope>source.cpp, source.c++</scope>
+</snippet>

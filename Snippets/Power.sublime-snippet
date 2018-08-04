@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[long long power(long long a,long long p,long long m=1e9+7,long long k=0){
+	return p?k=power(a,p/2,m),(k*k%m)*(p&1?a:1)%m:1;
+}
+]]></content>
+	<tabTrigger>power</tabTrigger>
+	<scope>source.cpp, source.c, source.c++</scope>
+</snippet>

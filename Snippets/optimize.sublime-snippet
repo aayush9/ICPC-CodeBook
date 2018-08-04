@@ -1,0 +1,9 @@
+<snippet>
+	<description>#ifndef … #define … #endif</description>
+	<content><![CDATA[#pragma comment(linker, "stack:200000000")
+#pragma GCC optimize("Ofast")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
+]]></content>
+	<tabTrigger>optimize</tabTrigger>
+	<scope>source.c, source.c++, source.objc, source.objc++</scope>
+</snippet>

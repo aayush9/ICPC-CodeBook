@@ -48,7 +48,8 @@ SuffixArray.cc	Suffix array
 #BIT.cc	Binary Indexed Tree
 #UnionFind.cc	Union-find set
 KDTree.cc	KD-tree
-splay.cc	Splay tree
+#splay.cc	Splay tree
+MergeSortTree.cc	Merge Sort Tree
 #SegmentTreeLazy.cc	Lazy segment tree
 
 [Miscellaneous]
