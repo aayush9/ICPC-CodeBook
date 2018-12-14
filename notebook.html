@@ -13,58 +13,56 @@
 <LI><A HREF="#file1">Dinic's</A></LI>
 <LI><A HREF="#file2">Min-cost max-flow</A></LI>
 <LI><A HREF="#file3">Edmonds Max Matching</A></LI>
-<LI><A HREF="#file4">Global min-cut</A></LI>
 </OL>
 <H2>Geometry</H2>
 
-<OL START=5>
-<LI><A HREF="#file5">Convex hull</A></LI>
-<LI><A HREF="#file6">Miscellaneous geometry</A></LI>
-<LI><A HREF="#file7">3D geometry</A></LI>
-<LI><A HREF="#file8">Slow Delaunay triangulation</A></LI>
+<OL START=4>
+<LI><A HREF="#file4">Convex hull</A></LI>
+<LI><A HREF="#file5">Miscellaneous geometry</A></LI>
+<LI><A HREF="#file6">3D geometry</A></LI>
 </OL>
 <H2>Numerical algorithms</H2>
 
-<OL START=9>
-<LI><A HREF="#file9">Number theory (modular, Chinese remainder, linear Diophantine)</A></LI>
-<LI><A HREF="#file10">Systems of linear equations, matrix inverse, determinant</A></LI>
-<LI><A HREF="#file11">Reduced row echelon form, matrix rank</A></LI>
-<LI><A HREF="#file12">Simplex algorithm</A></LI>
-<LI><A HREF="#file13">Fast Fourier transform</A></LI>
-<LI><A HREF="#file14">BigInt library</A></LI>
+<OL START=7>
+<LI><A HREF="#file7">Number theory (modular, Chinese remainder, linear Diophantine)</A></LI>
+<LI><A HREF="#file8">Systems of linear equations, matrix inverse, determinant</A></LI>
+<LI><A HREF="#file9">Reduced row echelon form, matrix rank</A></LI>
+<LI><A HREF="#file10">Simplex algorithm</A></LI>
+<LI><A HREF="#file11">Fast Fourier transform</A></LI>
+<LI><A HREF="#file12">BigInt library</A></LI>
 </OL>
 <H2>Graph algorithms</H2>
 
-<OL START=15>
-<LI><A HREF="#file15">Bellman-Ford shortest paths with negative edge weights</A></LI>
-<LI><A HREF="#file16">Eulerian path</A></LI>
-<LI><A HREF="#file17">Minimum spanning trees</A></LI>
-<LI><A HREF="#file18">Centroid decomposition</A></LI>
-<LI><A HREF="#file19">Heavy-Light decomposition</A></LI>
+<OL START=13>
+<LI><A HREF="#file13">Bellman-Ford shortest paths with negative edge weights</A></LI>
+<LI><A HREF="#file14">Eulerian path</A></LI>
+<LI><A HREF="#file15">Minimum spanning trees</A></LI>
+<LI><A HREF="#file16">Centroid decomposition</A></LI>
+<LI><A HREF="#file17">Heavy-Light decomposition</A></LI>
 </OL>
 <H2>Data structures</H2>
 
-<OL START=20>
-<LI><A HREF="#file20">Suffix array</A></LI>
-<LI><A HREF="#file21">KD-tree</A></LI>
-<LI><A HREF="#file22">Splay tree</A></LI>
+<OL START=18>
+<LI><A HREF="#file18">Suffix array</A></LI>
+<LI><A HREF="#file19">KD-tree</A></LI>
+<LI><A HREF="#file20">Merge Sort Tree</A></LI>
 </OL>
 <H2>Miscellaneous</H2>
 
-<OL START=23>
-<LI><A HREF="#file23">Miller-Rabin Primality Test</A></LI>
-<LI><A HREF="#file24">Pollard-Rho factorization</A></LI>
-<LI><A HREF="#file25">Manachers algorithm</A></LI>
-<LI><A HREF="#file26">Convex Hull Trick</A></LI>
-<LI><A HREF="#file27">Dynamic Programming(DnC)</A></LI>
-<LI><A HREF="#file28">Longest increasing subsequence</A></LI>
-<LI><A HREF="#file29">Dates</A></LI>
-<LI><A HREF="#file30">Knuth-Morris-Pratt</A></LI>
-<LI><A HREF="#file31">2-SAT</A></LI>
+<OL START=21>
+<LI><A HREF="#file21">Miller-Rabin Primality Test</A></LI>
+<LI><A HREF="#file22">Pollard-Rho factorization</A></LI>
+<LI><A HREF="#file23">Manachers algorithm</A></LI>
+<LI><A HREF="#file24">Convex Hull Trick</A></LI>
+<LI><A HREF="#file25">Dynamic Programming(DnC)</A></LI>
+<LI><A HREF="#file26">Longest increasing subsequence</A></LI>
+<LI><A HREF="#file27">Dates</A></LI>
+<LI><A HREF="#file28">Knuth-Morris-Pratt</A></LI>
+<LI><A HREF="#file29">2-SAT</A></LI>
 </OL>
 <HR>
 <A NAME="file1">
-<H1>code/Dinic.cc 1/31</H1>
+<H1>code/Dinic.cc 1/29</H1>
 [<A HREF="#top">top</A>][prev][<A HREF="#file2">next</A>]
 <PRE>
 <B><FONT COLOR="#228B22">struct</FONT></B> Dinic {
@@ -138,7 +136,7 @@
 };</PRE>
 <HR>
 <A NAME="file2">
-<H1>code/MinCostMaxFlow.cc 2/31</H1>
+<H1>code/MinCostMaxFlow.cc 2/29</H1>
 [<A HREF="#top">top</A>][<A HREF="#file1">prev</A>][<A HREF="#file3">next</A>]
 <PRE>
 <I><FONT COLOR="#B22222">// Implementation of min cost max flow algorithm using adjacency
@@ -278,7 +276,7 @@ using namespace std;
 </FONT></I></PRE>
 <HR>
 <A NAME="file3">
-<H1>code/Edmonds.cc 3/31</H1>
+<H1>code/Edmonds.cc 3/29</H1>
 [<A HREF="#top">top</A>][<A HREF="#file2">prev</A>][<A HREF="#file4">next</A>]
 <PRE>
 <I><FONT COLOR="#B22222">/*
@@ -419,88 +417,8 @@ edge top=pool,adj[M];
 }</PRE>
 <HR>
 <A NAME="file4">
-<H1>code/MinCut.cc 4/31</H1>
+<H1>code/ConvexHull.cc 4/29</H1>
 [<A HREF="#top">top</A>][<A HREF="#file3">prev</A>][<A HREF="#file5">next</A>]
-<PRE>
-<I><FONT COLOR="#B22222">// Adjacency matrix implementation of Stoer-Wagner min cut algorithm.
-</FONT></I><I><FONT COLOR="#B22222">//
-</FONT></I><I><FONT COLOR="#B22222">// Running time:
-</FONT></I><I><FONT COLOR="#B22222">//     O(|V|^3)
-</FONT></I><I><FONT COLOR="#B22222">//
-</FONT></I><I><FONT COLOR="#B22222">// INPUT: 
-</FONT></I><I><FONT COLOR="#B22222">//     - graph, constructed using AddEdge()
-</FONT></I><I><FONT COLOR="#B22222">//
-</FONT></I><I><FONT COLOR="#B22222">// OUTPUT:
-</FONT></I><I><FONT COLOR="#B22222">//     - (min cut value, nodes in half of min cut)
-</FONT></I>
-#<B><FONT COLOR="#5F9EA0">include</FONT></B> <B><FONT COLOR="#BC8F8F">&lt;cmath&gt;</FONT></B>
-#<B><FONT COLOR="#5F9EA0">include</FONT></B> <B><FONT COLOR="#BC8F8F">&lt;vector&gt;</FONT></B>
-#<B><FONT COLOR="#5F9EA0">include</FONT></B> <B><FONT COLOR="#BC8F8F">&lt;iostream&gt;</FONT></B>
-
-using namespace std;
-
-<B><FONT COLOR="#228B22">typedef</FONT></B> vector&lt;<B><FONT COLOR="#228B22">int</FONT></B>&gt; VI;
-<B><FONT COLOR="#228B22">typedef</FONT></B> vector&lt;VI&gt; VVI;
-
-<B><FONT COLOR="#228B22">const</FONT></B> <B><FONT COLOR="#228B22">int</FONT></B> INF = 1000000000;
-
-pair&lt;<B><FONT COLOR="#228B22">int</FONT></B>, VI&gt; GetMinCut(VVI &amp;weights) {
-  <B><FONT COLOR="#228B22">int</FONT></B> N = weights.size();
-  VI used(N), cut, best_cut;
-  <B><FONT COLOR="#228B22">int</FONT></B> best_weight = -1;
-  
-  <B><FONT COLOR="#A020F0">for</FONT></B> (<B><FONT COLOR="#228B22">int</FONT></B> phase = N-1; phase &gt;= 0; phase--) {
-    VI w = weights[0];
-    VI added = used;
-    <B><FONT COLOR="#228B22">int</FONT></B> prev, last = 0;
-    <B><FONT COLOR="#A020F0">for</FONT></B> (<B><FONT COLOR="#228B22">int</FONT></B> i = 0; i &lt; phase; i++) {
-      prev = last;
-      last = -1;
-      <B><FONT COLOR="#A020F0">for</FONT></B> (<B><FONT COLOR="#228B22">int</FONT></B> j = 1; j &lt; N; j++)
-	<B><FONT COLOR="#A020F0">if</FONT></B> (!added[j] &amp;&amp; (last == -1 || w[j] &gt; w[last])) last = j;
-      <B><FONT COLOR="#A020F0">if</FONT></B> (i == phase-1) {
-	<B><FONT COLOR="#A020F0">for</FONT></B> (<B><FONT COLOR="#228B22">int</FONT></B> j = 0; j &lt; N; j++) weights[prev][j] += weights[last][j];
-	<B><FONT COLOR="#A020F0">for</FONT></B> (<B><FONT COLOR="#228B22">int</FONT></B> j = 0; j &lt; N; j++) weights[j][prev] = weights[prev][j];
-	used[last] = true;
-	cut.push_back(last);
-	<B><FONT COLOR="#A020F0">if</FONT></B> (best_weight == -1 || w[last] &lt; best_weight) {
-	  best_cut = cut;
-	  best_weight = w[last];
-	}
-      } <B><FONT COLOR="#A020F0">else</FONT></B> {
-	<B><FONT COLOR="#A020F0">for</FONT></B> (<B><FONT COLOR="#228B22">int</FONT></B> j = 0; j &lt; N; j++)
-	  w[j] += weights[last][j];
-	added[last] = true;
-      }
-    }
-  }
-  <B><FONT COLOR="#A020F0">return</FONT></B> make_pair(best_weight, best_cut);
-}
-
-<I><FONT COLOR="#B22222">// BEGIN CUT
-</FONT></I><I><FONT COLOR="#B22222">// The following code solves UVA problem #10989: Bomb, Divide and Conquer
-</FONT></I><B><FONT COLOR="#228B22">int</FONT></B> <B><FONT COLOR="#0000FF">main</FONT></B>() {
-  <B><FONT COLOR="#228B22">int</FONT></B> N;
-  cin &gt;&gt; N;
-  <B><FONT COLOR="#A020F0">for</FONT></B> (<B><FONT COLOR="#228B22">int</FONT></B> i = 0; i &lt; N; i++) {
-    <B><FONT COLOR="#228B22">int</FONT></B> n, m;
-    cin &gt;&gt; n &gt;&gt; m;
-    VVI weights(n, VI(n));
-    <B><FONT COLOR="#A020F0">for</FONT></B> (<B><FONT COLOR="#228B22">int</FONT></B> j = 0; j &lt; m; j++) {
-      <B><FONT COLOR="#228B22">int</FONT></B> a, b, c;
-      cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
-      weights[a-1][b-1] = weights[b-1][a-1] = c;
-    }
-    pair&lt;<B><FONT COLOR="#228B22">int</FONT></B>, VI&gt; res = GetMinCut(weights);
-    cout &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;Case #&quot;</FONT></B> &lt;&lt; i+1 &lt;&lt; <B><FONT COLOR="#BC8F8F">&quot;: &quot;</FONT></B> &lt;&lt; res.first &lt;&lt; endl;
-  }
-}
-<I><FONT COLOR="#B22222">// END CUT
-</FONT></I></PRE>
-<HR>
-<A NAME="file5">
-<H1>code/ConvexHull.cc 5/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file4">prev</A>][<A HREF="#file6">next</A>]
 <PRE>
 <B><FONT COLOR="#228B22">typedef</FONT></B> pair&lt;<B><FONT COLOR="#228B22">long</FONT></B> <B><FONT COLOR="#228B22">long</FONT></B>, <B><FONT COLOR="#228B22">long</FONT></B> <B><FONT COLOR="#228B22">long</FONT></B>&gt; PT;
 <B><FONT COLOR="#228B22">long</FONT></B> <B><FONT COLOR="#228B22">double</FONT></B> <B><FONT COLOR="#0000FF">dist</FONT></B>(PT a, PT b){
@@ -532,9 +450,9 @@ vector&lt;PT&gt; convexhull(){
   <B><FONT COLOR="#A020F0">return</FONT></B> hull;
 }</PRE>
 <HR>
-<A NAME="file6">
-<H1>code/Geometry.cc 6/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file5">prev</A>][<A HREF="#file7">next</A>]
+<A NAME="file5">
+<H1>code/Geometry.cc 5/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file4">prev</A>][<A HREF="#file6">next</A>]
 <PRE>
 <B><FONT COLOR="#228B22">double</FONT></B> INF = 1e100,EPS = 1e-12;
 
@@ -734,9 +652,9 @@ PT <B><FONT COLOR="#0000FF">ComputeCentroid</FONT></B>(<B><FONT COLOR="#228B22">
   <B><FONT COLOR="#A020F0">return</FONT></B> true;
 }</PRE>
 <HR>
-<A NAME="file7">
-<H1>code/Geom3D.java 7/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file6">prev</A>][<A HREF="#file8">next</A>]
+<A NAME="file6">
+<H1>code/Geom3D.java 6/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file5">prev</A>][<A HREF="#file7">next</A>]
 <PRE>
 <B><FONT COLOR="#A020F0">public</FONT></B> <B><FONT COLOR="#A020F0">class</FONT></B> Geom3D {
   <I><FONT COLOR="#B22222">// distance from point (x, y, z) to plane aX + bY + cZ + d = 0
@@ -796,79 +714,9 @@ PT <B><FONT COLOR="#0000FF">ComputeCentroid</FONT></B>(<B><FONT COLOR="#228B22">
 }
 </PRE>
 <HR>
-<A NAME="file8">
-<H1>code/Delaunay.cc 8/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file7">prev</A>][<A HREF="#file9">next</A>]
-<PRE>
-<I><FONT COLOR="#B22222">// Slow but simple Delaunay triangulation. Does not handle
-</FONT></I><I><FONT COLOR="#B22222">// degenerate cases (from O'Rourke, Computational Geometry in C)
-</FONT></I><I><FONT COLOR="#B22222">//
-</FONT></I><I><FONT COLOR="#B22222">// Running time: O(n^4)
-</FONT></I><I><FONT COLOR="#B22222">//
-</FONT></I><I><FONT COLOR="#B22222">// INPUT:    x[] = x-coordinates
-</FONT></I><I><FONT COLOR="#B22222">//           y[] = y-coordinates
-</FONT></I><I><FONT COLOR="#B22222">//
-</FONT></I><I><FONT COLOR="#B22222">// OUTPUT:   triples = a vector containing m triples of indices
-</FONT></I><I><FONT COLOR="#B22222">//                     corresponding to triangle vertices
-</FONT></I>
-#<B><FONT COLOR="#5F9EA0">include&lt;vector&gt;</FONT></B>
-using namespace std;
-
-<B><FONT COLOR="#228B22">typedef</FONT></B> <B><FONT COLOR="#228B22">double</FONT></B> T;
-
-<B><FONT COLOR="#228B22">struct</FONT></B> triple {
-    <B><FONT COLOR="#228B22">int</FONT></B> i, j, k;
-    triple() {}
-    triple(<B><FONT COLOR="#228B22">int</FONT></B> i, <B><FONT COLOR="#228B22">int</FONT></B> j, <B><FONT COLOR="#228B22">int</FONT></B> k) : i(i), j(j), k(k) {}
-};
-
-vector&lt;triple&gt; delaunayTriangulation(vector&lt;T&gt;&amp; x, vector&lt;T&gt;&amp; y) {
-	<B><FONT COLOR="#228B22">int</FONT></B> n = x.size();
-	vector&lt;T&gt; z(n);
-	vector&lt;triple&gt; ret;
-
-	<B><FONT COLOR="#A020F0">for</FONT></B> (<B><FONT COLOR="#228B22">int</FONT></B> i = 0; i &lt; n; i++)
-	    z[i] = x[i] * x[i] + y[i] * y[i];
-
-	<B><FONT COLOR="#A020F0">for</FONT></B> (<B><FONT COLOR="#228B22">int</FONT></B> i = 0; i &lt; n-2; i++) {
-	    <B><FONT COLOR="#A020F0">for</FONT></B> (<B><FONT COLOR="#228B22">int</FONT></B> j = i+1; j &lt; n; j++) {
-		<B><FONT COLOR="#A020F0">for</FONT></B> (<B><FONT COLOR="#228B22">int</FONT></B> k = i+1; k &lt; n; k++) {
-		    <B><FONT COLOR="#A020F0">if</FONT></B> (j == k) <B><FONT COLOR="#A020F0">continue</FONT></B>;
-		    <B><FONT COLOR="#228B22">double</FONT></B> xn = (y[j]-y[i])*(z[k]-z[i]) - (y[k]-y[i])*(z[j]-z[i]);
-		    <B><FONT COLOR="#228B22">double</FONT></B> yn = (x[k]-x[i])*(z[j]-z[i]) - (x[j]-x[i])*(z[k]-z[i]);
-		    <B><FONT COLOR="#228B22">double</FONT></B> zn = (x[j]-x[i])*(y[k]-y[i]) - (x[k]-x[i])*(y[j]-y[i]);
-		    <B><FONT COLOR="#228B22">bool</FONT></B> flag = zn &lt; 0;
-		    <B><FONT COLOR="#A020F0">for</FONT></B> (<B><FONT COLOR="#228B22">int</FONT></B> m = 0; flag &amp;&amp; m &lt; n; m++)
-			flag = flag &amp;&amp; ((x[m]-x[i])*xn + 
-					(y[m]-y[i])*yn + 
-					(z[m]-z[i])*zn &lt;= 0);
-		    <B><FONT COLOR="#A020F0">if</FONT></B> (flag) ret.push_back(triple(i, j, k));
-		}
-	    }
-	}
-	<B><FONT COLOR="#A020F0">return</FONT></B> ret;
-}
-
-<B><FONT COLOR="#228B22">int</FONT></B> <B><FONT COLOR="#0000FF">main</FONT></B>()
-{
-    T xs[]={0, 0, 1, 0.9};
-    T ys[]={0, 1, 0, 0.9};
-    vector&lt;T&gt; x(&amp;xs[0], &amp;xs[4]), y(&amp;ys[0], &amp;ys[4]);
-    vector&lt;triple&gt; tri = delaunayTriangulation(x, y);
-    
-    <I><FONT COLOR="#B22222">//expected: 0 1 3
-</FONT></I>    <I><FONT COLOR="#B22222">//          0 3 2
-</FONT></I>    
-    <B><FONT COLOR="#228B22">int</FONT></B> i;
-    <B><FONT COLOR="#A020F0">for</FONT></B>(i = 0; i &lt; tri.size(); i++)
-        printf(<B><FONT COLOR="#BC8F8F">&quot;%d %d %d\n&quot;</FONT></B>, tri[i].i, tri[i].j, tri[i].k);
-    <B><FONT COLOR="#A020F0">return</FONT></B> 0;
-}
-</PRE>
-<HR>
-<A NAME="file9">
-<H1>code/Euclid.cc 9/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file8">prev</A>][<A HREF="#file10">next</A>]
+<A NAME="file7">
+<H1>code/Euclid.cc 7/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file6">prev</A>][<A HREF="#file8">next</A>]
 <PRE>
 <I><FONT COLOR="#B22222">// All algorithms described here work on nonnegative integers.
 </FONT></I>
@@ -970,9 +818,9 @@ vector&lt;triple&gt; delaunayTriangulation(vector&lt;T&gt;&amp; x, vector&lt;T&g
   <B><FONT COLOR="#A020F0">return</FONT></B> true;
 }</PRE>
 <HR>
-<A NAME="file10">
-<H1>code/GaussJordan.cc 10/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file9">prev</A>][<A HREF="#file11">next</A>]
+<A NAME="file8">
+<H1>code/GaussJordan.cc 8/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file7">prev</A>][<A HREF="#file9">next</A>]
 <PRE>
 <I><FONT COLOR="#B22222">// Gauss-Jordan elimination with full pivoting.
 </FONT></I><I><FONT COLOR="#B22222">//
@@ -1082,9 +930,9 @@ T GaussJordan(VVT &amp;a, VVT &amp;b) {
 }
 </PRE>
 <HR>
-<A NAME="file11">
-<H1>code/ReducedRowEchelonForm.cc 11/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file10">prev</A>][<A HREF="#file12">next</A>]
+<A NAME="file9">
+<H1>code/ReducedRowEchelonForm.cc 9/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file8">prev</A>][<A HREF="#file10">next</A>]
 <PRE>
 <I><FONT COLOR="#B22222">// Reduced row echelon form via Gauss-Jordan elimination 
 </FONT></I><I><FONT COLOR="#B22222">// with partial pivoting.  This can be used for computing
@@ -1162,9 +1010,9 @@ using namespace std;
 }
 </PRE>
 <HR>
-<A NAME="file12">
-<H1>code/Simplex.cc 12/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file11">prev</A>][<A HREF="#file13">next</A>]
+<A NAME="file10">
+<H1>code/Simplex.cc 10/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file9">prev</A>][<A HREF="#file11">next</A>]
 <PRE>
 <I><FONT COLOR="#B22222">// Two-phase simplex algorithm for solving linear programs of the form
 </FONT></I><I><FONT COLOR="#B22222">//
@@ -1292,9 +1140,9 @@ using namespace std;
 }
 </PRE>
 <HR>
-<A NAME="file13">
-<H1>code/FFT.cc 13/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file12">prev</A>][<A HREF="#file14">next</A>]
+<A NAME="file11">
+<H1>code/FFT.cc 11/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file10">prev</A>][<A HREF="#file12">next</A>]
 <PRE>
 <B><FONT COLOR="#228B22">auto</FONT></B> FFT = [](vector&lt;<B><FONT COLOR="#228B22">long</FONT></B> <B><FONT COLOR="#228B22">double</FONT></B>&gt;a,vector&lt;<B><FONT COLOR="#228B22">long</FONT></B> <B><FONT COLOR="#228B22">double</FONT></B>&gt;b){
   <B><FONT COLOR="#228B22">auto</FONT></B> DFT = [](vector&lt;<B><FONT COLOR="#228B22">complex</FONT></B>&lt;<B><FONT COLOR="#228B22">long</FONT></B> <B><FONT COLOR="#228B22">double</FONT></B>&gt;&gt;&amp;a, <B><FONT COLOR="#228B22">bool</FONT></B> inv){
@@ -1321,9 +1169,9 @@ using namespace std;
   <B><FONT COLOR="#A020F0">return</FONT></B> c;
 };</PRE>
 <HR>
-<A NAME="file14">
-<H1>code/bignum.cc 14/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file13">prev</A>][<A HREF="#file15">next</A>]
+<A NAME="file12">
+<H1>code/bignum.cc 12/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file11">prev</A>][<A HREF="#file13">next</A>]
 <PRE>
 <B><FONT COLOR="#228B22">struct</FONT></B> bigint {
   <B><FONT COLOR="#228B22">const</FONT></B> <B><FONT COLOR="#228B22">int</FONT></B> base = 1000000000, base_digits = 9;
@@ -1626,9 +1474,9 @@ using namespace std;
   }
 };</PRE>
 <HR>
-<A NAME="file15">
-<H1>code/BellmanFord.cc 15/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file14">prev</A>][<A HREF="#file16">next</A>]
+<A NAME="file13">
+<H1>code/BellmanFord.cc 13/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file12">prev</A>][<A HREF="#file14">next</A>]
 <PRE>
 <I><FONT COLOR="#B22222">// Single source shortest paths with negative edge weights.
 </FONT></I><I><FONT COLOR="#B22222">// Returns false if a negative weight cycle is detected.
@@ -1657,9 +1505,9 @@ vector&lt;<B><FONT COLOR="#228B22">double</FONT></B>&gt; dist;
 <B><FONT COLOR="#228B22">int</FONT></B> <B><FONT COLOR="#0000FF">main</FONT></B>(){}
 </PRE>
 <HR>
-<A NAME="file16">
-<H1>code/EulerianPath.cc 16/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file15">prev</A>][<A HREF="#file17">next</A>]
+<A NAME="file14">
+<H1>code/EulerianPath.cc 14/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file13">prev</A>][<A HREF="#file15">next</A>]
 <PRE>
 <B><FONT COLOR="#228B22">struct</FONT></B> Edge;
 <B><FONT COLOR="#228B22">typedef</FONT></B> list&lt;Edge&gt;::iterator iter;
@@ -1703,9 +1551,9 @@ vector&lt;<B><FONT COLOR="#228B22">int</FONT></B>&gt; path;
 }
 </PRE>
 <HR>
-<A NAME="file17">
-<H1>code/Prim.cc 17/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file16">prev</A>][<A HREF="#file18">next</A>]
+<A NAME="file15">
+<H1>code/Prim.cc 15/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file14">prev</A>][<A HREF="#file16">next</A>]
 <PRE>
 <I><FONT COLOR="#B22222">// This function runs Prim's algorithm for constructing minimum
 </FONT></I><I><FONT COLOR="#B22222">// weight spanning trees.
@@ -1792,9 +1640,9 @@ T Prim (<B><FONT COLOR="#228B22">const</FONT></B> VVT &amp;w, VPII &amp;edges){
 }
 </PRE>
 <HR>
-<A NAME="file18">
-<H1>code/Centroid.cc 18/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file17">prev</A>][<A HREF="#file19">next</A>]
+<A NAME="file16">
+<H1>code/Centroid.cc 16/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file15">prev</A>][<A HREF="#file17">next</A>]
 <PRE>
 set&lt;<B><FONT COLOR="#228B22">int</FONT></B>&gt; v[100005];
 map&lt;<B><FONT COLOR="#228B22">int</FONT></B>,<B><FONT COLOR="#228B22">int</FONT></B>&gt; mp[100005];
@@ -1850,9 +1698,9 @@ map&lt;<B><FONT COLOR="#228B22">int</FONT></B>,<B><FONT COLOR="#228B22">int</FON
   <B><FONT COLOR="#A020F0">return</FONT></B> ans;
 }</PRE>
 <HR>
-<A NAME="file19">
-<H1>code/HLD.cc 19/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file18">prev</A>][<A HREF="#file20">next</A>]
+<A NAME="file17">
+<H1>code/HLD.cc 17/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file16">prev</A>][<A HREF="#file18">next</A>]
 <PRE>
 #<B><FONT COLOR="#5F9EA0">include</FONT></B> <B><FONT COLOR="#BC8F8F">&lt;bits/stdc++.h&gt;</FONT></B>
 using namespace std;
@@ -1971,9 +1819,9 @@ vector&lt;SegmentTree&gt; ST;
   }
 }</PRE>
 <HR>
-<A NAME="file20">
-<H1>code/SuffixArray.cc 20/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file19">prev</A>][<A HREF="#file21">next</A>]
+<A NAME="file18">
+<H1>code/SuffixArray.cc 18/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file17">prev</A>][<A HREF="#file19">next</A>]
 <PRE>
 <I><FONT COLOR="#B22222">// Suffix array construction in O(L log^2 L) time.  Routine for
 </FONT></I><I><FONT COLOR="#B22222">// computing the length of the longest common prefix of any two
@@ -2079,9 +1927,9 @@ using namespace std;
 <I><FONT COLOR="#B22222">// END CUT
 </FONT></I></PRE>
 <HR>
-<A NAME="file21">
-<H1>code/KDTree.cc 21/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file20">prev</A>][<A HREF="#file22">next</A>]
+<A NAME="file19">
+<H1>code/KDTree.cc 19/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file18">prev</A>][<A HREF="#file20">next</A>]
 <PRE>
 <I><FONT COLOR="#B22222">// A straightforward, but probably sub-optimal KD-tree implmentation
 </FONT></I><I><FONT COLOR="#B22222">// that's probably good enough for most things (current it's a
@@ -2275,164 +2123,41 @@ using namespace std;
     }    
 }</PRE>
 <HR>
-<A NAME="file22">
-<H1>code/splay.cc 22/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file21">prev</A>][<A HREF="#file23">next</A>]
+<A NAME="file20">
+<H1>code/MergeSortTree.cc 20/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file19">prev</A>][<A HREF="#file21">next</A>]
 <PRE>
-#<B><FONT COLOR="#5F9EA0">include</FONT></B> <B><FONT COLOR="#BC8F8F">&lt;cstdio&gt;</FONT></B>
-#<B><FONT COLOR="#5F9EA0">include</FONT></B> <B><FONT COLOR="#BC8F8F">&lt;algorithm&gt;</FONT></B>
+#<B><FONT COLOR="#5F9EA0">include</FONT></B> <B><FONT COLOR="#BC8F8F">&lt;bits/stdc++.h&gt;</FONT></B>
 using namespace std;
-
-<B><FONT COLOR="#228B22">const</FONT></B> <B><FONT COLOR="#228B22">int</FONT></B> N_MAX = 130010;
-<B><FONT COLOR="#228B22">const</FONT></B> <B><FONT COLOR="#228B22">int</FONT></B> oo = 0x3f3f3f3f;
-<B><FONT COLOR="#228B22">struct</FONT></B> Node
-{
-  Node *ch[2], *pre;
-  <B><FONT COLOR="#228B22">int</FONT></B> val, size;
-  <B><FONT COLOR="#228B22">bool</FONT></B> isTurned;
-} nodePool[N_MAX], *null, *root;
-
-Node *<B><FONT COLOR="#0000FF">allocNode</FONT></B>(<B><FONT COLOR="#228B22">int</FONT></B> val)
-{
-  <B><FONT COLOR="#228B22">static</FONT></B> <B><FONT COLOR="#228B22">int</FONT></B> freePos = 0;
-  Node *x = &amp;nodePool[freePos ++];
-  x-&gt;val = val, x-&gt;isTurned = false;
-  x-&gt;ch[0] = x-&gt;ch[1] = x-&gt;pre = null;
-  x-&gt;size = 1;
-  <B><FONT COLOR="#A020F0">return</FONT></B> x;
+<B><FONT COLOR="#228B22">int</FONT></B> A[1000005];
+vector&lt;<B><FONT COLOR="#228B22">int</FONT></B>&gt; segtree[400005];
+<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">build</FONT></B>(<B><FONT COLOR="#228B22">int</FONT></B> u, <B><FONT COLOR="#228B22">int</FONT></B> a, <B><FONT COLOR="#228B22">int</FONT></B> b){
+	<B><FONT COLOR="#A020F0">if</FONT></B>(a==b){
+		segtree[u].push_back(A[a]);
+		<B><FONT COLOR="#A020F0">return</FONT></B>;
+	}
+	build(u*2,a,(a+b)/2); build(u*2+1,(a+b)/2+1,b);
+	segtree[u].resize(b-a+1);
+	merge(segtree[u*2].begin(),segtree[u*2].end(),segtree[u*2+1].begin(),segtree[u*2+1].end(),segtree[u].begin());
 }
-
-<B><FONT COLOR="#228B22">inline</FONT></B> <B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">update</FONT></B>(Node *x)
-{
-  x-&gt;size = x-&gt;ch[0]-&gt;size + x-&gt;ch[1]-&gt;size + 1;
+<B><FONT COLOR="#228B22">int</FONT></B> <B><FONT COLOR="#0000FF">query</FONT></B>(<B><FONT COLOR="#228B22">int</FONT></B> u, <B><FONT COLOR="#228B22">int</FONT></B> a, <B><FONT COLOR="#228B22">int</FONT></B> b, <B><FONT COLOR="#228B22">int</FONT></B> i, <B><FONT COLOR="#228B22">int</FONT></B> j, <B><FONT COLOR="#228B22">int</FONT></B> k){
+	<B><FONT COLOR="#A020F0">if</FONT></B>(b&lt;a || j&lt;a || i&gt;b) <B><FONT COLOR="#A020F0">return</FONT></B> 0;
+	<B><FONT COLOR="#A020F0">if</FONT></B>(i&lt;=a &amp;&amp; b&lt;=j) <B><FONT COLOR="#A020F0">return</FONT></B> lower_bound(segtree[u].begin(),segtree[u].end(),k) - segtree[u].begin();
+	<B><FONT COLOR="#A020F0">return</FONT></B> query(u*2,a,(a+b)/2,i,j,k)+query(u*2+1,(a+b)/2+1,b,i,j,k);
 }
-
-<B><FONT COLOR="#228B22">inline</FONT></B> <B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">makeTurned</FONT></B>(Node *x)
-{
-  <B><FONT COLOR="#A020F0">if</FONT></B>(x == null)
-    <B><FONT COLOR="#A020F0">return</FONT></B>;
-  swap(x-&gt;ch[0], x-&gt;ch[1]);
-  x-&gt;isTurned ^= 1;
-}
-
-<B><FONT COLOR="#228B22">inline</FONT></B> <B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">pushDown</FONT></B>(Node *x)
-{
-  <B><FONT COLOR="#A020F0">if</FONT></B>(x-&gt;isTurned)
-  {
-    makeTurned(x-&gt;ch[0]);
-    makeTurned(x-&gt;ch[1]);
-    x-&gt;isTurned ^= 1;
-  }
-}
-
-<B><FONT COLOR="#228B22">inline</FONT></B> <B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">rotate</FONT></B>(Node *x, <B><FONT COLOR="#228B22">int</FONT></B> c)
-{
-  Node *y = x-&gt;pre;
-  x-&gt;pre = y-&gt;pre;
-  <B><FONT COLOR="#A020F0">if</FONT></B>(y-&gt;pre != null)
-    y-&gt;pre-&gt;ch[y == y-&gt;pre-&gt;ch[1]] = x;
-  y-&gt;ch[!c] = x-&gt;ch[c];
-  <B><FONT COLOR="#A020F0">if</FONT></B>(x-&gt;ch[c] != null)
-    x-&gt;ch[c]-&gt;pre = y;
-  x-&gt;ch[c] = y, y-&gt;pre = x;
-  update(y);
-  <B><FONT COLOR="#A020F0">if</FONT></B>(y == root)
-    root = x;
-}
-
-<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">splay</FONT></B>(Node *x, Node *p)
-{
-  <B><FONT COLOR="#A020F0">while</FONT></B>(x-&gt;pre != p)
-  {
-    <B><FONT COLOR="#A020F0">if</FONT></B>(x-&gt;pre-&gt;pre == p)
-      rotate(x, x == x-&gt;pre-&gt;ch[0]);
-    <B><FONT COLOR="#A020F0">else</FONT></B>
-    {
-      Node *y = x-&gt;pre, *z = y-&gt;pre;
-      <B><FONT COLOR="#A020F0">if</FONT></B>(y == z-&gt;ch[0])
-      {
-        <B><FONT COLOR="#A020F0">if</FONT></B>(x == y-&gt;ch[0])
-          rotate(y, 1), rotate(x, 1);
-        <B><FONT COLOR="#A020F0">else</FONT></B>
-          rotate(x, 0), rotate(x, 1);
-      }
-      <B><FONT COLOR="#A020F0">else</FONT></B>
-      {
-        <B><FONT COLOR="#A020F0">if</FONT></B>(x == y-&gt;ch[1])
-          rotate(y, 0), rotate(x, 0);
-        <B><FONT COLOR="#A020F0">else</FONT></B>
-          rotate(x, 1), rotate(x, 0);
-      }
-    }
-  }
-  update(x);
-}
-
-<B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">select</FONT></B>(<B><FONT COLOR="#228B22">int</FONT></B> k, Node *fa)
-{
-  Node *now = root;
-  <B><FONT COLOR="#A020F0">while</FONT></B>(1)
-  {
-    pushDown(now);
-    <B><FONT COLOR="#228B22">int</FONT></B> tmp = now-&gt;ch[0]-&gt;size + 1;
-    <B><FONT COLOR="#A020F0">if</FONT></B>(tmp == k)
-      <B><FONT COLOR="#A020F0">break</FONT></B>;
-    <B><FONT COLOR="#A020F0">else</FONT></B> <B><FONT COLOR="#A020F0">if</FONT></B>(tmp &lt; k)
-      now = now-&gt;ch[1], k -= tmp;
-    <B><FONT COLOR="#A020F0">else</FONT></B>
-      now = now-&gt;ch[0];
-  }
-  splay(now, fa);
-}
-
-Node *<B><FONT COLOR="#0000FF">makeTree</FONT></B>(Node *p, <B><FONT COLOR="#228B22">int</FONT></B> l, <B><FONT COLOR="#228B22">int</FONT></B> r)
-{
-  <B><FONT COLOR="#A020F0">if</FONT></B>(l &gt; r)
-    <B><FONT COLOR="#A020F0">return</FONT></B> null;
-  <B><FONT COLOR="#228B22">int</FONT></B> mid = (l + r) / 2;
-  Node *x = allocNode(mid);
-  x-&gt;pre = p;
-  x-&gt;ch[0] = makeTree(x, l, mid - 1);
-  x-&gt;ch[1] = makeTree(x, mid + 1, r);
-  update(x);
-  <B><FONT COLOR="#A020F0">return</FONT></B> x;
-}
-
-<B><FONT COLOR="#228B22">int</FONT></B> <B><FONT COLOR="#0000FF">main</FONT></B>()
-{
-  <B><FONT COLOR="#228B22">int</FONT></B> n, m;
-  null = allocNode(0);
-  null-&gt;size = 0;
-  root = allocNode(0);
-  root-&gt;ch[1] = allocNode(oo);
-  root-&gt;ch[1]-&gt;pre = root;
-  update(root);
-
-  scanf(<B><FONT COLOR="#BC8F8F">&quot;%d%d&quot;</FONT></B>, &amp;n, &amp;m);
-  root-&gt;ch[1]-&gt;ch[0] = makeTree(root-&gt;ch[1], 1, n);
-  splay(root-&gt;ch[1]-&gt;ch[0], null);
-
-  <B><FONT COLOR="#A020F0">while</FONT></B>(m --)
-  {
-    <B><FONT COLOR="#228B22">int</FONT></B> a, b;
-    scanf(<B><FONT COLOR="#BC8F8F">&quot;%d%d&quot;</FONT></B>, &amp;a, &amp;b);
-    a ++, b ++;
-    select(a - 1, null);
-    select(b + 1, root);
-    makeTurned(root-&gt;ch[1]-&gt;ch[0]);
-  }
-
-  <B><FONT COLOR="#A020F0">for</FONT></B>(<B><FONT COLOR="#228B22">int</FONT></B> i = 1; i &lt;= n; i ++)
-  {
-    select(i + 1, null);
-    printf(<B><FONT COLOR="#BC8F8F">&quot;%d &quot;</FONT></B>, root-&gt;val);
-  }
-}
-</PRE>
+<B><FONT COLOR="#228B22">int</FONT></B> <B><FONT COLOR="#0000FF">main</FONT></B>(){
+	<B><FONT COLOR="#5F9EA0">ios_base</FONT></B>::sync_with_stdio(0);
+	<B><FONT COLOR="#228B22">int</FONT></B> n,q,low,high,mid,x,y,k;
+	<B><FONT COLOR="#A020F0">for</FONT></B>(cin&gt;&gt;n&gt;&gt;q,x=0;x&lt;n;cin&gt;&gt;A[x++]);
+	<B><FONT COLOR="#A020F0">for</FONT></B>(build(1,0,n-1);q--;cout&lt;&lt;low-1&lt;&lt;<B><FONT COLOR="#BC8F8F">'\n'</FONT></B>)
+		<B><FONT COLOR="#A020F0">for</FONT></B>(cin&gt;&gt;x&gt;&gt;y&gt;&gt;k,low=-1e9,high=1e9;low&lt;high;)
+			<B><FONT COLOR="#A020F0">if</FONT></B>(query(1,0,n-1,x-1,y-1,mid=low+high&gt;&gt;1)&lt;k) low=mid+1;
+			<B><FONT COLOR="#A020F0">else</FONT></B> high=mid;
+}</PRE>
 <HR>
-<A NAME="file23">
-<H1>code/MillerRabin.cc 23/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file22">prev</A>][<A HREF="#file24">next</A>]
+<A NAME="file21">
+<H1>code/MillerRabin.cc 21/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file20">prev</A>][<A HREF="#file22">next</A>]
 <PRE>
 <I><FONT COLOR="#B22222">//   Error rate: 2^(-TRIAL)
 </FONT></I><I><FONT COLOR="#B22222">//   Almost constant time. srand is needed
@@ -2471,9 +2196,9 @@ int64_t <B><FONT COLOR="#0000FF">ModExp</FONT></B>(int64_t a, int64_t n, int64_t
 }
 </PRE>
 <HR>
-<A NAME="file24">
-<H1>code/pollard_rho.cc 24/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file23">prev</A>][<A HREF="#file25">next</A>]
+<A NAME="file22">
+<H1>code/pollard_rho.cc 22/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file21">prev</A>][<A HREF="#file23">next</A>]
 <PRE>
 <B><FONT COLOR="#228B22">typedef</FONT></B> <B><FONT COLOR="#228B22">long</FONT></B> <B><FONT COLOR="#228B22">long</FONT></B> <B><FONT COLOR="#228B22">unsigned</FONT></B> <B><FONT COLOR="#228B22">int</FONT></B> llui;
 <B><FONT COLOR="#228B22">typedef</FONT></B> <B><FONT COLOR="#228B22">long</FONT></B> <B><FONT COLOR="#228B22">long</FONT></B> <B><FONT COLOR="#228B22">int</FONT></B> lli;
@@ -2582,9 +2307,9 @@ map&lt;llui,<B><FONT COLOR="#228B22">int</FONT></B>&gt; factors;
   }
 }</PRE>
 <HR>
-<A NAME="file25">
-<H1>code/manacher.cpp 25/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file24">prev</A>][<A HREF="#file26">next</A>]
+<A NAME="file23">
+<H1>code/manacher.cpp 23/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file22">prev</A>][<A HREF="#file24">next</A>]
 <PRE>
 <I><FONT COLOR="#B22222">// Maximal palindrome lengths centered around each
 </FONT></I><I><FONT COLOR="#B22222">// position in a string (including positions between characters) and returns
@@ -2616,9 +2341,9 @@ map&lt;llui,<B><FONT COLOR="#228B22">int</FONT></B>&gt; factors;
   <B><FONT COLOR="#A020F0">return</FONT></B> res;
 }</PRE>
 <HR>
-<A NAME="file26">
-<H1>code/CHT.cc 26/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file25">prev</A>][<A HREF="#file27">next</A>]
+<A NAME="file24">
+<H1>code/CHT.cc 24/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file23">prev</A>][<A HREF="#file25">next</A>]
 <PRE>
 <B><FONT COLOR="#228B22">struct</FONT></B> Line {
   <B><FONT COLOR="#228B22">long</FONT></B> <B><FONT COLOR="#228B22">long</FONT></B> m, b;
@@ -2654,9 +2379,9 @@ map&lt;llui,<B><FONT COLOR="#228B22">int</FONT></B>&gt; factors;
   }
 };</PRE>
 <HR>
-<A NAME="file27">
-<H1>code/DnCDP.cpp 27/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file26">prev</A>][<A HREF="#file28">next</A>]
+<A NAME="file25">
+<H1>code/DnCDP.cpp 25/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file24">prev</A>][<A HREF="#file26">next</A>]
 <PRE>
 <B><FONT COLOR="#228B22">long</FONT></B> <B><FONT COLOR="#228B22">long</FONT></B> dp[21][100005];
 <B><FONT COLOR="#228B22">void</FONT></B> <B><FONT COLOR="#0000FF">cost</FONT></B>(<B><FONT COLOR="#228B22">int</FONT></B> x, <B><FONT COLOR="#228B22">int</FONT></B> y);
@@ -2681,15 +2406,12 @@ map&lt;llui,<B><FONT COLOR="#228B22">int</FONT></B>&gt; factors;
   cout&lt;&lt;dp[k][n];
 }</PRE>
 <HR>
-<A NAME="file28">
-<H1>code/LongestIncreasingSubsequence.cc 28/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file27">prev</A>][<A HREF="#file29">next</A>]
+<A NAME="file26">
+<H1>code/LongestIncreasingSubsequence.cc 26/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file25">prev</A>][<A HREF="#file27">next</A>]
 <PRE>
-<I><FONT COLOR="#B22222">// Given a list of numbers of length n, this routine extracts a
-</FONT></I><I><FONT COLOR="#B22222">// longest increasing subsequence.
-</FONT></I><I><FONT COLOR="#B22222">//
+<I><FONT COLOR="#B22222">// Given a list of numbers of length n, this routine extracts a longest increasing subsequence.
 </FONT></I><I><FONT COLOR="#B22222">// Running time: O(n log n)
-</FONT></I><I><FONT COLOR="#B22222">//
 </FONT></I><I><FONT COLOR="#B22222">//   INPUT: a vector of integers
 </FONT></I><I><FONT COLOR="#B22222">//   OUTPUT: a vector containing the longest increasing subsequence
 </FONT></I>
@@ -2729,16 +2451,14 @@ VI <B><FONT COLOR="#0000FF">LongestIncreasingSubsequence</FONT></B>(VI v) {
 }
 </PRE>
 <HR>
-<A NAME="file29">
-<H1>code/Dates.cc 29/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file28">prev</A>][<A HREF="#file30">next</A>]
+<A NAME="file27">
+<H1>code/Dates.cc 27/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file26">prev</A>][<A HREF="#file28">next</A>]
 <PRE>
-<I><FONT COLOR="#B22222">// Months are expressed as integers from 1 to 12, Days are expressed
-</FONT></I><I><FONT COLOR="#B22222">// as integers from 1 to 31, and Years are expressed as 4-digit
-</FONT></I><I><FONT COLOR="#B22222">// integers.
+<I><FONT COLOR="#B22222">// Months are expressed as integers from 1 to 12, Days are expressed as integers from 1 to 31, and Years are expressed as 4-digit integers.
 </FONT></I>string dayOfWeek[] = {<B><FONT COLOR="#BC8F8F">&quot;Mon&quot;</FONT></B>, <B><FONT COLOR="#BC8F8F">&quot;Tue&quot;</FONT></B>, <B><FONT COLOR="#BC8F8F">&quot;Wed&quot;</FONT></B>, <B><FONT COLOR="#BC8F8F">&quot;Thu&quot;</FONT></B>, <B><FONT COLOR="#BC8F8F">&quot;Fri&quot;</FONT></B>, <B><FONT COLOR="#BC8F8F">&quot;Sat&quot;</FONT></B>, <B><FONT COLOR="#BC8F8F">&quot;Sun&quot;</FONT></B>};
 
-<I><FONT COLOR="#B22222">// converts Gregorian date to integer (Julian day number)
+<I><FONT COLOR="#B22222">//converts Gregorian date to integer(Julian day number)
 </FONT></I><B><FONT COLOR="#228B22">int</FONT></B> <B><FONT COLOR="#0000FF">dateToInt</FONT></B> (<B><FONT COLOR="#228B22">int</FONT></B> m, <B><FONT COLOR="#228B22">int</FONT></B> d, <B><FONT COLOR="#228B22">int</FONT></B> y){  
   <B><FONT COLOR="#A020F0">return</FONT></B> 
     1461 * (y + 4800 + (m - 14) / 12) / 4 +
@@ -2767,9 +2487,9 @@ VI <B><FONT COLOR="#0000FF">LongestIncreasingSubsequence</FONT></B>(VI v) {
   <B><FONT COLOR="#A020F0">return</FONT></B> dayOfWeek[jd % 7];
 }</PRE>
 <HR>
-<A NAME="file30">
-<H1>code/KMP.cc 30/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file29">prev</A>][<A HREF="#file31">next</A>]
+<A NAME="file28">
+<H1>code/KMP.cc 28/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file27">prev</A>][<A HREF="#file29">next</A>]
 <PRE>
 <B><FONT COLOR="#228B22">typedef</FONT></B> vector&lt;<B><FONT COLOR="#228B22">int</FONT></B>&gt; VI;
 
@@ -2782,7 +2502,6 @@ VI <B><FONT COLOR="#0000FF">LongestIncreasingSubsequence</FONT></B>(VI v) {
     pi[i] = ++k;
   }
 }
-
 <B><FONT COLOR="#228B22">int</FONT></B> <B><FONT COLOR="#0000FF">KMP</FONT></B>(string&amp; t, string&amp; p){
   VI pi;
   buildPi(p, pi);
@@ -2798,18 +2517,16 @@ VI <B><FONT COLOR="#0000FF">LongestIncreasingSubsequence</FONT></B>(VI v) {
       k = (k == -1) ? -2 : pi[k];
     }
   }
-  <B><FONT COLOR="#A020F0">return</FONT></B> 0;
 }
 
 <B><FONT COLOR="#228B22">int</FONT></B> <B><FONT COLOR="#0000FF">main</FONT></B>(){
-  string a = <B><FONT COLOR="#BC8F8F">&quot;AABAACAADAABAABA&quot;</FONT></B>, b = <B><FONT COLOR="#BC8F8F">&quot;AABA&quot;</FONT></B>;
-  KMP(a, b); <I><FONT COLOR="#B22222">// expected matches at: 0, 9, 12
+  KMP(<B><FONT COLOR="#BC8F8F">&quot;AABAACAADAABAABA&quot;</FONT></B>, <B><FONT COLOR="#BC8F8F">&quot;AABA&quot;</FONT></B>); <I><FONT COLOR="#B22222">//Mtches at: 0,9,12
 </FONT></I>}
 </PRE>
 <HR>
-<A NAME="file31">
-<H1>code/2SAT.cc 31/31</H1>
-[<A HREF="#top">top</A>][<A HREF="#file30">prev</A>][next]
+<A NAME="file29">
+<H1>code/2SAT.cc 29/29</H1>
+[<A HREF="#top">top</A>][<A HREF="#file28">prev</A>][next]
 <PRE>
 <B><FONT COLOR="#228B22">struct</FONT></B> TwoSat {
   <B><FONT COLOR="#228B22">int</FONT></B> n;
@@ -2842,8 +2559,7 @@ VI <B><FONT COLOR="#0000FF">LongestIncreasingSubsequence</FONT></B>(VI v) {
   }
 
   <I><FONT COLOR="#B22222">// returns true if satisfiable, false otherwise
-</FONT></I>  <I><FONT COLOR="#B22222">// on completion, val[x] is the assigned value of variable x
-</FONT></I>  <I><FONT COLOR="#B22222">// note, val[x] = 0 implies val[x^1] = 1
+</FONT></I>  <I><FONT COLOR="#B22222">// on completion, val[x] is the assigned value of variable x (Note: val[x] = 0 implies val[x^1] = 1)
 </FONT></I>  <B><FONT COLOR="#228B22">bool</FONT></B> two_sat() {
     scnt = 0;
     <B><FONT COLOR="#A020F0">for</FONT></B> (<B><FONT COLOR="#228B22">int</FONT></B> i = 0; i &lt; n; dfs1(i++));

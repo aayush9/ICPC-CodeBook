@@ -1,102 +1,63 @@
-// Suffix array construction in O(L log^2 L) time.  Routine for
-// computing the length of the longest common prefix of any two
-// suffixes in O(log L) time.
-//
-// INPUT:   string s
-//
-// OUTPUT:  array suffix[] such that suffix[i] = index (from 0 to L-1)
-//          of substring s[i...L-1] in the list of sorted suffixes.
-//          That is, if we take the inverse of the permutation suffix[],
-//          we get the actual suffix array.
-
-#include <vector>
-#include <iostream>
-#include <string>
-
+#include <bits/stdc++.h>
 using namespace std;
-
-struct SuffixArray {
-  const int L;
-  string s;
-  vector<vector<int> > P;
-  vector<pair<pair<int,int>,int> > M;
-
-  SuffixArray(const string &s) : L(s.length()), s(s), P(1, vector<int>(L, 0)), M(L) {
-    for (int i = 0; i < L; i++) P[0][i] = int(s[i]);
-    for (int skip = 1, level = 1; skip < L; skip *= 2, level++) {
-      P.push_back(vector<int>(L, 0));
-      for (int i = 0; i < L; i++) 
-	M[i] = make_pair(make_pair(P[level-1][i], i + skip < L ? P[level-1][i + skip] : -1000), i);
-      sort(M.begin(), M.end());
-      for (int i = 0; i < L; i++) 
-	P[level][M[i].second] = (i > 0 && M[i].first == M[i-1].first) ? P[level][M[i-1].second] : i;
-    }    
+vector<int> suffix_array(string &s){
+  int n = s.size();
+  vector<int> sa(n), buckets(n);
+  for(int i=0;i<n;++i) sa[i] = n-i-1;
+  stable_sort(sa.begin(),sa.end(),[&](int i, int j){return s[i]<s[j];});
+  for(int i=0;i<n;++i) buckets[i]=s[i];
+  for(int len=1;len<n;len*=2){
+    vector<int> b(buckets), cnt(n), s(sa);
+    for(int i=0;i<n;++i)
+      buckets[sa[i]]=i&&b[sa[i-1]]==b[sa[i]]&&sa[i-1]+len<n&&b[sa[i-1]+len/2]==b[sa[i]+len/2]?buckets[sa[i-1]]:i;
+    iota(cnt.begin(), cnt.end(),0);
+    for(int i=0;i<n;++i) if(s[i]>=len)
+      sa[cnt[buckets[s[i]-len]]++]=s[i]-len;
   }
-
-  vector<int> GetSuffixArray() { return P.back(); }
-
-  // returns the length of the longest common prefix of s[i...L-1] and s[j...L-1]
-  int LongestCommonPrefix(int i, int j) {
-    int len = 0;
-    if (i == j) return L - i;
-    for (int k = P.size() - 1; k >= 0 && i < L && j < L; k--) {
-      if (P[k][i] == P[k][j]) {
-	i += 1 << k;
-	j += 1 << k;
-	len += 1 << k;
-      }
-    }
-    return len;
-  }
-};
-
-// BEGIN CUT
-// The following code solves UVA problem 11512: GATTACA.
-#define TESTING
-#ifdef TESTING
-int main() {
-  int T;
-  cin >> T;
-  for (int caseno = 0; caseno < T; caseno++) {
-    string s;
-    cin >> s;
-    SuffixArray array(s);
-    vector<int> v = array.GetSuffixArray();
-    int bestlen = -1, bestpos = -1, bestcount = 0;
-    for (int i = 0; i < s.length(); i++) {
-      int len = 0, count = 0;
-      for (int j = i+1; j < s.length(); j++) {
-	int l = array.LongestCommonPrefix(i, j);
-	if (l >= len) {
-	  if (l > len) count = 2; else count++;
-	  len = l;
-	}
-      }
-      if (len > bestlen || len == bestlen && s.substr(bestpos, bestlen) > s.substr(i, len)) {
-	bestlen = len;
-	bestcount = count;
-	bestpos = i;
-      }
-    }
-    if (bestlen == 0) {
-      cout << "No repetitions found!" << endl;
-    } else {
-      cout << s.substr(bestpos, bestlen) << " " << bestcount << endl;
-    }
-  }
+  return sa;
 }
-
-#else
-// END CUT
-int main() {
-  SuffixArray suffix("bobocel");
-  vector<int> v = suffix.GetSuffixArray();
-  // Expected output: 0 5 1 6 2 3 4
-  //                  2
-  for (int i = 0; i < v.size(); i++) cout << v[i] << " ";
-  cout << endl;
-  cout << suffix.LongestCommonPrefix(0, 2) << endl;
+vector<int> kasai(string &s, vector<int> &sa){
+  int n = s.size();
+  vector<int> lcp(n),inv(n);
+  for(int i=0;i<n;++i) inv[sa[i]] = i;
+  for(int i=0,k=0;i<n;++i){
+    if(k<0) k = 0;
+    if(inv[i]==n-1){ k=0; continue; }
+    for(int j=sa[inv[i]+1];max(i,j)+k<n&&s[i+k]==s[j+k];++k);
+    lcp[inv[i]] = k--;
+  }
+  return lcp;
 }
-// BEGIN CUT
-#endif
-// END CUT
+int main(){
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  string a,s;
+  int K = 0;
+  for(;cin>>a;++K) s += a + char(4+K);
+  vector<int> color(s.size()), col(s.size());
+  for(int i=0,cnt=0;i<s.size();++i)
+    col[i]=cnt, cnt+=s[i]<20;
+  auto sa = suffix_array(s);
+  auto lcp = kasai(s,sa);
+  for(int i=0;i<lcp.size();++i) color[i]=col[sa[i]];
+  int freq[11] = {};
+  deque<int> v, mq;
+  multiset<int> ms;
+  int ans=0;
+  for(int i=1,COL=0;i<lcp.size();++i){
+    if(++freq[color[i]]==1) ++COL;
+    while(v.size() && freq[color[v[0]]]>1){
+      if(mq[0]==v[0])
+        mq.pop_front();
+      --freq[color[v[0]]];
+      v.pop_front();
+    }
+    if(COL==K) ans = max(ans,lcp[mq[0]]);
+    v.push_back(i);
+    while(mq.size() && lcp[mq[0]]>lcp[i])
+      mq.pop_front();
+    mq.push_back(i);
+  }
+  cout<<ans<<'\n';
+  return 0;
+}

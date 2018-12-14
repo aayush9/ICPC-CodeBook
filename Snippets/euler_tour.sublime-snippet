@@ -1,13 +1,18 @@
 <snippet>
-	<content><![CDATA[int tour[200005],enter[100005],leave[100005],CLK=0;
-void gettour(int u=1, int dad=-1){
-	tour[CLK]=u;
-	enter[u]=CLK++;
-	for(int i:v[u])
-		if(i!=dad)
-			gettour(i,u);
-	tour[CLK]=u;
-	leave[u]=CLK++;
+	<content><![CDATA[int tour[200005],tin[100005],tout[100005],CLK, lvl[100005], up[100005][17];
+void gettour(int u=1, int dad=1, int depth = 0){
+	tour[tin[u]=CLK++]=u;
+	lvl[u] = depth, up[u][0] = dad;
+	for(int i=1;i<17;++i) up[u][i] = up[up[u][i-1]][i-1];
+	for(int i:v[u]) if(i!=dad) gettour(i,u, depth+1);
+	tour[tout[u]=CLK++]=u;
+}
+int lca(int u, int v){
+	if(lvl[u]>lvl[v]) swap(u,v);
+	if(tin[u]<=tin[v] && tout[v]<=tout[u]) return u;
+	for(int i=17;i--;) if(!(tin[up[u][i]]<=tin[v]&&tout[v]<=tout[up[u][i]]))
+		u = up[u][i];
+	return up[u][0];
 }
 ]]></content>
 	<tabTrigger>eulertour</tabTrigger>

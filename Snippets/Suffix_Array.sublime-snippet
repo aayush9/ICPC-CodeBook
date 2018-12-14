@@ -1,0 +1,33 @@
+<snippet>
+	<description>Suffix Array</description>
+	<content><![CDATA[vector<int> suffix_array(string &s){
+	int n = s.size();
+	vector<int> sa(n), buckets(n);
+	for(int i=0;i<n;++i) sa[i] = n-i-1;
+	stable_sort(sa.begin(),sa.end(),[&](int i, int j){return s[i]<s[j];});
+	for(int i=0;i<n;++i) buckets[i]=s[i];
+	for(int len=1;len<n;len*=2){
+		vector<int> b(buckets), cnt(n), s(sa);
+		for(int i=0;i<n;++i)
+			buckets[sa[i]]=i&&b[sa[i-1]]==b[sa[i]]&&sa[i-1]+len<n&&b[sa[i-1]+len/2]==b[sa[i]+len/2]?buckets[sa[i-1]]:i;
+		iota(cnt.begin(), cnt.end(),0);
+		for(int i=0;i<n;++i) if(s[i]>=len)
+			sa[cnt[buckets[s[i]-len]]++]=s[i]-len;
+	}
+	return sa;
+}
+vector<int> kasai(string &s){
+	int n = s.size();
+	vector<int> sa = suffix_array(s), lcp(n),inv(n);
+	for(int i=0;i<n;++i) inv[sa[i]] = i;
+	for(int i=0,k=0;i<n;++i){
+		if(k<0) k = 0;
+		if(inv[i]==n-1){ k=0; continue; }
+		for(int j=sa[inv[i]+1];max(i,j)+k<n&&s[i+k]==s[j+k];++k);
+		lcp[inv[i]] = k--;
+	}
+	return lcp;
+}]]></content>
+	<tabTrigger>suffix</tabTrigger>
+	<scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>
