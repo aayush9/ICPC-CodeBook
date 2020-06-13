@@ -1,0 +1,14 @@
+In any bipartite graph, the number of edges in a maximum matching equals the
+number of vertices in a minimum vertex cover. To exhibit the vertex cover:
+\begin{enumerate}
+\itemsep-0.5em 
+\item Find a maximum matching
+\item Change each edge \textbf{used} in the matching into a directed edge from
+\textbf{right to left}
+\item Change each edge \textbf{not used} in the matching into a directed edge
+from \textbf{left to right}
+\item Compute the set $T$ of all vertices reachable from unmatched vertices on
+the left (including themselves)
+\item The vertex cover consists of all vertices on the right that are
+\textbf{in} $T$, and all vertices on the left that are \textbf{not in} $T$
+\end{enumerate}

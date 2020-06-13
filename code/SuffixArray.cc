@@ -1,20 +1,19 @@
-#include <bits/stdc++.h>
-using namespace std;
-vector<int> suffix_array(string &s){
-  int n = s.size();
-  vector<int> sa(n), buckets(n);
-  for(int i=0;i<n;++i) sa[i] = n-i-1;
-  stable_sort(sa.begin(),sa.end(),[&](int i, int j){return s[i]<s[j];});
-  for(int i=0;i<n;++i) buckets[i]=s[i];
-  for(int len=1;len<n;len*=2){
-    vector<int> b(buckets), cnt(n), s(sa);
-    for(int i=0;i<n;++i)
-      buckets[sa[i]]=i&&b[sa[i-1]]==b[sa[i]]&&sa[i-1]+len<n&&b[sa[i-1]+len/2]==b[sa[i]+len/2]?buckets[sa[i-1]]:i;
-    iota(cnt.begin(), cnt.end(),0);
-    for(int i=0;i<n;++i) if(s[i]>=len)
-      sa[cnt[buckets[s[i]-len]]++]=s[i]-len;
+vector<int> suffix_array(string &A){
+  int n=A.size(),i=n, *M=new int[5*n];
+  int *B=M,*C=M+n,*F=M+2*n,*G=M+3*n,*S=M+4*n;
+  for(;i--;S[i]=n-i-1) B[i]=A[i];
+  stable_sort(S,S+n,[&](int i,int j){return A[i]<A[j];});
+  for(int L=1,p;L<n;L*=2){
+    for(;++i<n;F[i]=B[S[i]],G[i]=B[S[i]+L/2]);
+    for(;--i;F[i]=F[i]==F[i-1]&&G[i]==G[i-1]&&S[i-1]<n-L);
+    for(p=B[*S]=0;++i<n;B[S[i]]=p=F[i]?p:i);
+    for(fill_n(G,n,0);i--;F[i]=S[i]<L?-1:B[S[i]-L]);
+    for(iota(C,C+n,0);++i<n;~F[i]?G[i]=C[F[i]]++:0);
+    for(copy_n(S,n,F);i--;F[i]<L?0:S[G[i]]=F[i]-L);
   }
-  return sa;
+  vector<int>res(S,S+n);
+  delete[] M;
+  return res;
 }
 vector<int> kasai(string &s, vector<int> &sa){
   int n = s.size();
@@ -27,37 +26,4 @@ vector<int> kasai(string &s, vector<int> &sa){
     lcp[inv[i]] = k--;
   }
   return lcp;
-}
-int main(){
-  ios_base::sync_with_stdio(0);
-  cin.tie(0);
-  string a,s;
-  int K = 0;
-  for(;cin>>a;++K) s += a + char(4+K);
-  vector<int> color(s.size()), col(s.size());
-  for(int i=0,cnt=0;i<s.size();++i)
-    col[i]=cnt, cnt+=s[i]<20;
-  auto sa = suffix_array(s);
-  auto lcp = kasai(s,sa);
-  for(int i=0;i<lcp.size();++i) color[i]=col[sa[i]];
-  int freq[11] = {};
-  deque<int> v, mq;
-  multiset<int> ms;
-  int ans=0;
-  for(int i=1,COL=0;i<lcp.size();++i){
-    if(++freq[color[i]]==1) ++COL;
-    while(v.size() && freq[color[v[0]]]>1){
-      if(mq[0]==v[0])
-        mq.pop_front();
-      --freq[color[v[0]]];
-      v.pop_front();
-    }
-    if(COL==K) ans = max(ans,lcp[mq[0]]);
-    v.push_back(i);
-    while(mq.size() && lcp[mq[0]]>lcp[i])
-      mq.pop_front();
-    mq.push_back(i);
-  }
-  cout<<ans<<'\n';
-  return 0;
 }

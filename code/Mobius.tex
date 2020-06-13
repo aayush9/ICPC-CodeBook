@@ -1,0 +1,12 @@
+$\mu(n) = \begin{cases}
+0 & \text{$n$ not squarefree} \\
+1 & \text{$n$ squarefree w/ even no. of prime factors} \\
+1 & \text{$n$ squarefree w/ odd no. of prime factors} \\
+\end{cases}$\\
+Note that $\mu(a) \mu(b) = \mu(ab)$ for $a, b$ relatively prime\\
+Also $\sum_{d \mid n} \mu(d) = \begin{cases} 1 & \text{if $n = 1$} \\
+0 & \text{otherwise} \end{cases}$
+
+\textbf{M\"obius Inversion}
+If $g(n) = \sum_{d|n} f(d)$ for all $n \ge 1$, then
+$f(n) = \sum_{d|n} \mu(d)g(n/d)$ for all $n \ge 1$.\\

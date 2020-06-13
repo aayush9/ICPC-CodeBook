@@ -1,0 +1,10 @@
+<snippet>
+	<description>Test Cases</description>
+	<content><![CDATA[int n_tc; cin >> n_tc;
+for(int c_tc = 0; c_tc++ < n_tc;){
+	// cout << "Case #" << c_tc << ": ";
+	$1
+}]]></content>
+	<tabTrigger>test_cases</tabTrigger>
+	<scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

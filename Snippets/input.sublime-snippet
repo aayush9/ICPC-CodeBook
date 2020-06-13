@@ -1,7 +1,0 @@
-<snippet>
-	<description>Input Loop</description>
-	<content><![CDATA[for(int i=0;i<${1:n};cin>>a[i++]);
-		]]></content>
-	<tabTrigger>input</tabTrigger>
-	<scope>source.c, source.objc, source.c++, source.objc++</scope>
-</snippet>

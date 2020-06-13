@@ -1,0 +1,17 @@
+The number of orbits of a set $X$ under the group action $G$ equals the average
+number of elements of $X$ fixed by the elements of $G$.
+
+Here's an example. Consider a square of $2n$ times $2n$ cells. How many ways
+are there to color it into $X$ colors, up to rotations and/or reflections?
+Here, the group has only 8 elements (rotations by 0, 90, 180 and 270 degrees,
+reflections over two diagonals, over a vertical line and over a horizontal
+line). Every coloring stays itself after rotating by 0 degrees, so that
+rotation has $X^{4n^2}$ fixed points. Rotation by 180 degrees and reflections
+over a horizonal/vertical line split all cells in pairs that must be of the
+same color for a coloring to be unaffected by such rotation/reflection, thus
+there exist $X^{2n^2}$ such colorings for each of them. Rotations by 90 and 270
+degrees split cells in groups of four, thus yielding $X^{n^2}$ fixed colorings.
+Reflections over diagonals split cells into $2n$ groups of 1 (the diagonal
+itself) and $2n^2-n$ groups of 2 (all remaining cells), thus yielding
+$X^{2n^2-n+2n}=X^{2n^2+n}$ unaffected colorings.  So, the answer is
+$(X^{4n^2}+3X^{2n^2}+2X^{n^2}+2X^{2n^2+n})/8$.

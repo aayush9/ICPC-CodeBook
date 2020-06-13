@@ -1,8 +1,0 @@
-<snippet>
-	<description>GP Hash Table</description>
-	<content><![CDATA[template <typename T, typename U>
-using hash_table = gp_hash_table<T,U,hash<T>,equal_to<T>,direct_mask_range_hashing<T>,linear_probe_fn<>,hash_standard_resize_policy<hash_exponential_size_policy<>,hash_load_check_resize_trigger<true>,true>>;
-]]></content>
-	<tabTrigger>gphash</tabTrigger>
-	<scope>source.c, source.objc, source.c++, source.objc++</scope>
-</snippet>

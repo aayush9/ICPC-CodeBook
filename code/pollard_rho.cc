@@ -12,7 +12,6 @@ llui mul_mod(llui a, llui b, llui m){
   }
   return r;
 }
-
 llui C,a,b;
 llui gcd(){
   llui c;
@@ -26,14 +25,12 @@ llui gcd(){
     b = c;
   }
 }
-
 llui f(llui a, llui b){
   llui tmp;
   tmp = mul_mod(a,a,b);
   tmp+=C; tmp%=b;
   return tmp;
 }
-
 llui pollard(llui n){
   if(!(n&1)) return 2;
   C=0;
@@ -53,7 +50,6 @@ llui pollard(llui n){
   }
   return 1;
 }
-
 llui pot(llui a, llui b, llui c){
   if(b == 0) return 1;
   if(b == 1) return a%c;
@@ -63,7 +59,6 @@ llui pot(llui a, llui b, llui c){
     resp = mul_mod(resp,a,c);
   return resp;
 }
-
 // Rabin-Miller primality testing algorithm
 bool isPrime(llui n){
   llui d = n-1;

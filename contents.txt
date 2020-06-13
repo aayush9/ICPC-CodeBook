@@ -4,72 +4,71 @@
 #   [filename within code directory][tab character \t][subsection title]
 
 [Combinatorial optimization]
-#MaxFlow.cc	Dense max-flow
 Dinic.cc	Dinic's
-MinCostMaxFlow.cc	Min-cost max-flow
+#MinCostMaxFlow.cc	Min-cost max-flow
+MinCostCirculation.cc	Min-cost Circulation
 Edmonds.cc	Edmonds Max Matching
-#MinCostMatching.cc	Min-cost matching
-#MaxBipartiteMatching.cc	Max bipartite matching
-#MinCut.cc	Global min-cut
-#GraphCutInference.cc	Graph cut inference
-#MaxFlow.java	Max-flow (Java)
-#MinCostMaxFlow.java	Min-cost max-flow (Java)
+MinCostMatching.cc	Hungarian Min-cost
+Konigs.tex	Konig's Theorem (Text)
+minedgecover.tex	Minimum Edge Cover (Text)
 
 [Geometry]
-ConvexHull.cc	Convex hull
 Geometry.cc	Miscellaneous geometry
-#JavaGeometry.java	Java geometry
 Geom3D.java	3D geometry
-#Delaunay.cc	Slow Delaunay triangulation
-#Delaunay.java	Slow Delaunay triangulation (Java)
+ConvexHull.cc	Convex hull
+MinEnclosingCircle.cc	Min Enclosing Circle
+Pick.tex	Pick's Theorem (Text)
+Delaunay.cc	Slow Delaunay triangulation
+#JavaGeometry.java	Java geometry
 
 [Numerical algorithms]
-Euclid.cc	Number theory (modular, Chinese remainder, linear Diophantine)
-GaussJordan.cc	Systems of linear equations, matrix inverse, determinant
-ReducedRowEchelonForm.cc	Reduced row echelon form, matrix rank
-#FFT_new.cc	Fast Fourier transform
+pollard_rho.cc	Pollard Rho
+#GaussJordan.cc	Systems of linear equations, matrix inverse, determinant
 Simplex.cc	Simplex algorithm
+ReducedRowEchelonForm.cc	Reduced row echelon form
 FFT.cc	Fast Fourier transform
-bignum.cc	BigInt library
+NTT.cpp	Number Theoretic transform
+discrete_log.cc	Discrete Logarithm
+Mobius.tex	Mobius Inversion (Text)
+Burnside.tex	Burnside Lemma (Text)
+Euclid.cc	Number Theory (Modular, CRT, Linear Diophantine)
 
 [Graph algorithms]
-BellmanFord.cc	Bellman-Ford shortest paths with negative edge weights 
-#DijkstraFloyd.cc	Dijkstra and Floyd's algorithm (C++)
-#FastDijkstra.cc	Fast Dijkstra's algorithm
-#SCC.cc	Strongly connected components
-EulerianPath.cc	Eulerian path
-#Kruskal.cc	Kruskal's algorithm
-Prim.cc	Minimum spanning trees
-Centroid.cc	Centroid decomposition
-HLD.cc	Heavy-Light decomposition
+dynconn.cpp	Dynamic Connectivity
+bridges.cpp	Bridges
+SCC.cc	Strongly connected components
+
+[String Stuff]
+SAM.cc	Suffix Automaton
+SuffixArray.cc	Suffix array
+Zalgo.cc	Z Algorithm
+KMP.cc	KMP
+string_hash.cc	String Hashing
+palindrome_dsu.cc	Palindrome DSU
+eertree.cc	Eertree
 
 [Data structures]
-SuffixArray.cc	Suffix array
-#BIT.cc	Binary Indexed Tree
+BITRange.cc	BIT Range Queries
+treap.cpp	Treaps
+link_cut.cc	Link-Cut Tree
 #UnionFind.cc	Union-find set
-KDTree.cc	KD-tree
+#KDTree.cc	KD-tree
 #splay.cc	Splay tree
-MergeSortTree.cc	Merge Sort Tree
+#MergeSortTree.cc	Merge Sort Tree
 #SegmentTreeLazy.cc	Lazy segment tree
 
 [Miscellaneous]
-MillerRabin.cc	Miller-Rabin Primality Test
-pollard_rho.cc	Pollard-Rho factorization
+2SAT.cc	2-SAT
+merge_insertion.cpp	Merge Insertion
+DP_optimizations.txt	DP Optimizations
+CHT.cc	Convex Hull Trick (Dynamic)
+ConvexHullStatic.cc	Convex Hull Trick (Static)
+bignum.cc	BigInt library
 manacher.cpp	Manachers algorithm
-CHT.cc	Convex Hull Trick
-DnCDP.cpp	Dynamic Programming(DnC)
-LongestIncreasingSubsequence.cc	Longest increasing subsequence
 Dates.cc	Dates
 #LogLan.java	Regular expressions
 #Primes.cc	Prime numbers
-#IO.cc	C++ input/output
-KMP.cc	Knuth-Morris-Pratt
-#LatLong.cc	Latitude/longitude
-#EmacsSettings.txt	Emacs settings
 #TopologicalSort.cc	Topological sort (C++)
-#Dates.java	Dates (Java)
-#DecFormat.java	Decimal output formatting (Java)
-#RandomSTL.cc	Random STL stuff
-2SAT.cc	2-SAT
-#FastExpo.cc	Fast exponentiation
-#LCS.cc	Longest common subsequence
+Bitset.txt	Bitset (Text)
+Template.cc	Template
+integration.cc	Numerical Integration

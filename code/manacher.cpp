@@ -1,7 +1,4 @@
-// Maximal palindrome lengths centered around each
-// position in a string (including positions between characters) and returns
-// them in left-to-right order of centres. Linear time.
-// Ex: "opposes" -> [0, 1, 0, 1, 4, 1, 0, 1, 0, 1, 0, 3, 0, 1, 0]
+// Ex: "opposes" -> [0,1,0,1,4,1,0,1,0,1,0,3,0,1,0]
 vector<int> fastLongestPalindromes(string str) {
   int i=0,j,d,s,e,lLen,palLen=0;
   vector<int> res;

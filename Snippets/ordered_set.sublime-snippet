@@ -1,0 +1,10 @@
+<snippet>
+	<description>Ordered Set</description>
+	<content><![CDATA[#include "ext/pb_ds/assoc_container.hpp"
+using namespace __gnu_pbds;
+template<typename T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+]]></content>
+	<tabTrigger>ordered_set</tabTrigger>
+	<scope>source.cpp, source.c++</scope>
+</snippet>

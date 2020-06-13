@@ -1,0 +1,97 @@
+<snippet>
+	<content><![CDATA[mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+struct node{
+	int size = 1, priority = rng();
+	long long sum = 0;
+	long long val = 0;
+	long long lazy = 0;
+	node *l = NULL, *r = NULL;
+	node(){}
+};
+typedef node* pnode;
+
+int sz(pnode t){ return t?t->size:0; }
+long long getsum(pnode t){ return t?t->sum:0; }
+void lazy(pnode &t){
+	if(!t) return;
+	if(t->lazy){
+		t->sum += t->lazy * t->size;
+		t->val += t->lazy;
+		if(t->l) t->l->lazy += t->lazy;
+		if(t->r) t->r->lazy += t->lazy;
+		t->lazy = 0;
+	}
+
+}
+void operation(pnode &t){
+	if(!t) return;
+	t->size = sz(t->l) + 1 + sz(t->r);
+	lazy(t->l);
+	lazy(t->r);
+
+	t->sum = t->val + getsum(t->l) + getsum(t->r);
+	lazy(t);
+}
+
+void print(pnode t){
+	if(!t) return;
+	operation(t);
+	print(t->l);
+	cout<<"("<<t->val<<","<<t->sum<<") ";
+	print(t->r);
+}
+void split(pnode t, pnode &l, pnode &r, int key){
+	if(!t) return void(l=r=NULL);
+
+	operation(t);
+	if(sz(t->l)<key)
+		split(t->r,t->r,r,key-1-sz(t->l)),l=t;
+	else
+		split(t->l,l,t->l,key), r = t;
+	operation(t);
+}
+
+void merge(pnode &t, pnode l, pnode r){
+	operation(l); operation(r);
+	if(!l) t = r;
+	else if(!r) t = l;
+	else if(l->priority > r->priority)
+		merge(l->r,l->r,r), t = l;
+	else
+		merge(r->l,l,r->l), t = r;
+
+	operation(t);
+}
+
+void insert(pnode &t, int x, pnode y){
+	pnode tmp;
+	split(t,t,tmp,x);
+	merge(t,t,y);
+	merge(t,t,tmp);
+}
+void update(pnode &t, int l, int r, long long val){
+	if(r<l) return;
+	pnode L,R;
+	split(t,L,t,l); split(t,t,R,r-l+1);
+
+	t->lazy += val;
+
+	merge(t,L,t); merge(t,t,R);
+}
+
+long long query(pnode &t, int l, int r){
+	if(r<l) return 0;
+
+	pnode L,R,mid;
+	split(t,L,mid,l); split(mid,t,R,r-l+1);
+
+	auto ans = t->sum;
+
+	merge(mid,L,t); merge(t,mid,R);
+
+	return ans;
+}
+]]></content>
+	<tabTrigger>treap</tabTrigger>
+	<scope>source.cpp, source.c, source.c++</scope>
+</snippet>

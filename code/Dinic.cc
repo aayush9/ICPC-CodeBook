@@ -33,12 +33,11 @@ struct Dinic {
         if (e.flow < e.cap && d[e.v] > d[e.u] + 1) {
           d[e.v] = d[e.u] + 1;
           q.emplace(e.v);
-          }
         }
+      }
     }
     return d[T] != N + 1;
   }
-
   long long DFS(int u, int T, long long flow = -1) {
     if (u == T || flow == 0) return flow;
     for (int &i = pt[u]; i < g[u].size(); ++i) {
@@ -56,7 +55,6 @@ struct Dinic {
     }
     return 0;
   }
-
   long long MaxFlow(int S, int T) {
     long long total = 0;
     while (BFS(S, T)) {

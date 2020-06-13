@@ -35,6 +35,8 @@ def get_style(filename):
         return 'java'
     elif ext in ['py']:
         return 'py'
+    elif ext in ['tex']:
+        return 'tex'
     else:
         return 'txt'
 
@@ -52,7 +54,10 @@ def get_tex(sections):
         for (filename, subsection_name) in subsections:
             tex += '\\subsection{%s}\n' % texify(subsection_name)
             tex += '\\vspace{-1.5ex}'
-            tex += '\\raggedbottom\\lstinputlisting[style=%s]{%s/%s}\n' % (get_style(filename), code_dir, filename)
+            if( get_style(filename) != 'tex'):
+                tex += '\\raggedbottom\\lstinputlisting[style=%s]{%s/%s}\n' % (get_style(filename), code_dir, filename)
+            else:
+                tex += open(code_dir+'/'+filename,'r').read()
             tex += '\\hrulefill\n'
         tex += '\n'
     return tex

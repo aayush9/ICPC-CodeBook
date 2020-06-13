@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
+
+]]></content>
+	<tabTrigger>mt19937</tabTrigger>
+	<scope>source.cpp, source.c, source.c++</scope>
+</snippet>

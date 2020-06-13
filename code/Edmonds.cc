@@ -1,136 +1,58 @@
-/*
-Input:
-V->number of vertices
-E->number of edges
-pair of vertices as edges (vertices are 1..V)
-
-Output:
-output of edmonds() is the maximum matching
-match[i] is matched pair of i (-1 if there isn't a matched pair)
- */
-
-#include <bits/stdc++.h>
-using namespace std;
-const int M=505;
-struct struct_edge{int v;struct_edge* n;};
-typedef struct_edge* edge;
-struct_edge pool[M*M*2];
-edge top=pool,adj[M];
-int V,E,match[M],qh,qt,q[M],father[M],base[M];
-bool inq[M],inb[M],ed[M][M];
-void add_edge(int u,int v)
-{
-  top->v=v,top->n=adj[u],adj[u]=top++;
-  top->v=u,top->n=adj[v],adj[v]=top++;
-}
-int LCA(int root,int u,int v)
-{
-  static bool inp[M];
-  memset(inp,0,sizeof(inp));
-  while(1)
-    {
-      inp[u=base[u]]=true;
-      if (u==root) break;
-      u=father[match[u]];
-    }
-  while(1)
-    {
-      if (inp[v=base[v]]) return v;
-      else v=father[match[v]];
-    }
-}
-void mark_blossom(int lca,int u)
-{
-  while (base[u]!=lca)
-    {
-      int v=match[u];
-      inb[base[u]]=inb[base[v]]=true;
-      u=father[v];
-      if (base[u]!=lca) father[u]=v;
-    }
-}
-void blossom_contraction(int s,int u,int v)
-{
-  int lca=LCA(s,u,v);
-  memset(inb,0,sizeof(inb));
-  mark_blossom(lca,u);
-  mark_blossom(lca,v);
-  if (base[u]!=lca)
-    father[u]=v;
-  if (base[v]!=lca)
-    father[v]=u;
-  for (int u=0;u<V;u++)
-    if (inb[base[u]])
-      {
-  base[u]=lca;
-  if (!inq[u])
-    inq[q[++qt]=u]=true;
-      }
-}
-int find_augmenting_path(int s)
-{
-  memset(inq,0,sizeof(inq));
-  memset(father,-1,sizeof(father));
-  for (int i=0;i<V;i++) base[i]=i;
-  inq[q[qh=qt=0]=s]=true;
-  while (qh<=qt)
-    {
-      int u=q[qh++];
-      for (edge e=adj[u];e;e=e->n)
-        {
-    int v=e->v;
-    if (base[u]!=base[v]&&match[u]!=v)
-      if ((v==s)||(match[v]!=-1 && father[match[v]]!=-1))
-        blossom_contraction(s,u,v);
-      else if (father[v]==-1)
-        {
-    father[v]=u;
-    if (match[v]==-1)
-      return v;
-    else if (!inq[match[v]])
-      inq[q[++qt]=match[v]]=true;
-        }
-        }
-    }
-  return -1;
-}
-int augment_path(int s,int t)
-{
-  int u=t,v,w;
-  while (u!=-1)
-    {
-      v=father[u];
-      w=match[v];
-      match[v]=u;
-      match[u]=v;
-      u=w;
-    }
-  return t!=-1;
-}
-int edmonds()
-{
-  int matchc=0;
-  memset(match,-1,sizeof(match));
-  for (int u=0;u<V;u++)
-    if (match[u]==-1)
-      matchc+=augment_path(u,find_augmenting_path(u));
-  return matchc;
-}
-int main()
-{
-  int u,v;
-  cin>>V>>E;
-  while(E--)
-    {
-      cin>>u>>v;
-      if (!ed[u-1][v-1])
-  {
-    add_edge(u-1,v-1);
-    ed[u-1][v-1]=ed[v-1][u-1]=true;
+#define MAXN 505
+vector<int>g[MAXN];
+int pa[MAXN],match[MAXN],st[MAXN],S[MAXN],v[MAXN];
+int t,n;
+inline int lca(int x,int y){
+  for(++t;;swap(x,y)) if(x){
+    if(v[x]==t)return x;
+    v[x]=t, x=st[pa[match[x]]];
   }
+}
+#define qpush(x) q.push(x),S[x]=0
+void flower(int x,int y,int l,queue<int> &q){
+  while(st[x]!=l){
+    pa[x]=y, y=match[x];
+    if(S[y]==1) qpush(y);
+    st[x]=st[y]=l, x=pa[y];
+  }
+}
+bool bfs(int x){
+  for(int i=1;i<=n;++i)st[i]=i;
+  memset(S+1,-1,sizeof(int)*n);
+  queue<int>q;
+  qpush(x);
+  while(q.size()){
+    x=q.front(),q.pop();
+    for(size_t i=0;i<g[x].size();++i){
+      int y=g[x][i];
+      if(S[y]==-1){
+        pa[y]=x, S[y]=1;
+        if(!match[y]){
+          for(int lst;x;y=lst,x=pa[y]){
+            lst=match[x], match[x]=y, match[y]=x;
+          }
+          return 1;
+        }
+        qpush(match[y]);
+      } else if(!S[y]&&st[y]!=st[x]){
+        int l=lca(y,x);
+        flower(y,x,l,q); flower(x,y,l,q);
+      }
     }
-  cout<<edmonds()<<endl;
-  for (int i=0;i<V;i++)
-    if (i<match[i])
-      cout<<i+1<<" "<<match[i]+1<<endl;
+  }
+  return 0;
+}
+int blossom(){
+  int ans=0;
+  for(int i=1;i<=n;++i)
+    if(!match[i]&&bfs(i))++ans;
+  return ans;
+}
+int main(){
+  while(m--){
+    g[x].push_back(y);
+    g[y].push_back(x);
+  }
+  printf("%d\n",blossom());
+  for(int i=1;i<=n;i++)printf("%d ",match[i]);
 }

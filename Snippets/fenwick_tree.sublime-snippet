@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[template<typename T>
+struct FenwickTree{
+	vector<T> BIT;
+	FenwickTree(int n){
+		BIT = vector<T>(n+5);
+	}
+	void update(int idx, T val){
+		for(++idx;idx < BIT.size(); idx += idx&-idx)
+			BIT[idx] += val;
+	}
+	T query(int idx){
+		T res(0);
+		for(++idx;idx > 0; idx -= idx&-idx)
+			res += BIT[idx];
+		return res;
+	}
+	T query(int l, int r){
+		return query(r) - query(l-1);
+	}
+};
+]]></content>
+	<tabTrigger>fenwicktree</tabTrigger>
+	<scope>source.cpp, source.c, source.c++</scope>
+</snippet>

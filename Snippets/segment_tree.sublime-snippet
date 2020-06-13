@@ -10,20 +10,17 @@ class SegmentTree{
 		combine = f;
 		segtree.resize(4*size,inf);
 	}
-	void update(int u, int a, int b, int i, int j, T x){
-		if(j<a || i>b || a>b) return;
-		if(j>=b && i<=a){
-			segtree[u]=combine(segtree[u],(b-a+1)*x);
+	void update(int u, int a, int b, int i, T x){
+		if(i<a || i>b) return;
+		if(i>=b && i<=a){
+			segtree[u]=x;
 			return;
 		}
-		update(u*2,a,(a+b)/2,i,j,x); update(u*2+1,(a+b)/2+1,b,i,j,x);
+		update(u*2,a,(a+b)/2,i,x); update(u*2+1,(a+b)/2+1,b,i,x);
 		segtree[u]=combine(segtree[u*2],segtree[u*2+1]);
 	}
 	void update(int i, T x){
-		update(1, 0, segtree.size()/4-1, i, i, x);
-	}
-	void update(int i, int j, T x){
-		update(1, 0, segtree.size()/4-1, i, j, x);
+		update(1, 0, segtree.size()/4-1, i, x);
 	}
 	T query(int u, int a, int b, int i, int j){
 		if(j<a || i>b || a>b) return inf;
