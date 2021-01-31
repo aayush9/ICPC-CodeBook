@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class Two_Sat {
   int N; // number of variables
   vector<int> val; // assignment of x is at val[2x] and -x at val[2x+1]
@@ -79,7 +78,6 @@ public:
     return true;
   }
 };
-=======
 // Taken from https://github.com/dacin21/dacin21_codebook/blob/master/dfs_stuff/2sat.cpp
 // 2-sat in linear time via backtracking.
 class Two_Sat {
@@ -179,4 +177,3 @@ public:
         return true;
     }
 };
->>>>>>> refs/remotes/origin/master
